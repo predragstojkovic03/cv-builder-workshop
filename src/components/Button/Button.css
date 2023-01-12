@@ -1,0 +1,20 @@
+.btn {
+    font-family: 'Mulish';
+    border-radius: 4px;
+    padding: 8px 18px;
+    box-shadow: none;
+    transition: all 250ms ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #0070f3;
+    border: 1px solid #0070f3;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0268dd;
+    border: 1px solid #0268dd;
+}

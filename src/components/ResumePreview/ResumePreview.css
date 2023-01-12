@@ -1,0 +1,7 @@
+.resumePreviewWrapper {
+  position: fixed;
+  left: 50%;
+  width: 50%;
+  height: 100vh;
+  background: #656e83;
+}

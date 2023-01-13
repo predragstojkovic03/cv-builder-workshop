@@ -1,3 +1,17 @@
+:root{
+  --resume-scale-regular: 0.7;
+  --resume-scale-lower-1: 0.6;
+  --resume-scale-lower-2: 0.5;
+
+  --resume-scale-regular-hover: 0.75;
+  --resume-scale-lower-1-hover: 0.65;
+  --resume-scale-lower-2-hover: 0.55;
+}
+
+/* * {
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
 .resumePreviewWrapper {
   position: fixed;
   left: 50%;
@@ -13,17 +27,46 @@
 }
 
 .documentWrapper {
-  border-radius: 25px;
+  position: relative;
+  border-radius: 15px;
   overflow: hidden;
-  transform: scale(0.7);
+  transform: scale(var(--resume-scale-regular));
   transition: 250ms ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .documentWrapper:hover {
+  border-radius: 10px;
   transform: scale(0.75);
 }
 
+.download-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: 1000;
+  transition: 250ms ease;
+  cursor: pointer;
+}
 
+.download-overlay:hover {
+  display: block;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.btn-download-pdf {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 28px;
+}
 
 
 /* Media Queries */
@@ -39,24 +82,24 @@
   }
 }
 
-@media only screen and (max-height: 890px) {
+@media only screen and (max-height: 850px) {
   .documentWrapper{
-      transform: scale(0.6);
+      transform: scale(var(--resume-scale-lower-1));
   }
 
   .documentWrapper:hover {
-      transform: scale(0.65);
+      transform: scale(var(--resume-scale-lower-1-hover));
       border-radius: 10px;
   }
 }
 
-@media only screen and (max-height: 730px) {
+@media only screen and (max-height: 760px) {
   .documentWrapper{
-      transform: scale(0.5);
+      transform: scale(var(--resume-scale-lower-2));
   }
 
   .documentWrapper:hover {
-      transform: scale(0.55);
+      transform: scale(var(--resume-scale-lower-2-hover));
       border-radius: 10px;
   }
 }

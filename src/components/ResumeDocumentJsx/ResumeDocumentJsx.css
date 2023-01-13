@@ -1,17 +1,15 @@
 .resumeDocument {
-    width: 595px !important;
-    height: 842px !important;
+    width: 21cm !important;
+    height: 29.7cm !important;
     display: flex;
     background: white;
     overflow: hidden;
-    transition: 250ms ease;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .aside {
     background: #ff8a8a;
     height: 100%;
-    width: 25%;
+    width: 30%;
     padding: 30px;
     word-wrap: break-word;
 }

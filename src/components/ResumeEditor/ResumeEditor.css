@@ -4,3 +4,11 @@
   padding: 40px 32px;
   box-sizing: border-box;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 1200px) {
+  .resumeEditorWrapper {
+    width: 100%;
+  }
+}

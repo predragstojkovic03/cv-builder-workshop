@@ -29,12 +29,15 @@ const ResumeBuilderPage = () => {
   console.log(personalDetails);
 
   return (
-    <div className='flex full-width'>
+    <div className='flex full-width position-relative'>
       <ResumeEditor
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
       />
-      <ResumePreview />
+      <ResumePreview
+        firstName={personalDetails.firstName}
+        lastName={personalDetails.lastName}
+      />
     </div>
   );
 };

@@ -84,6 +84,126 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           onChange={updatedPersonalDetails}
         />
       </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
+      <div className='inputRow'>
+        <Input
+          labelText='Address'
+          type='text'
+          name='address'
+          onChange={updatedPersonalDetails}
+        />
+
+        <Input
+          labelText='Date of Birth'
+          type='text'
+          name='dateOfBirth'
+          onChange={updatedPersonalDetails}
+        />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,4 @@
-import PDFViewer from '../PDFViewer/PDFViewer';
-
-import ResumeDocument from '../ResumeDocument/ResumeDocument';
-
+import ResumeDocumentJsx from '../ResumeDocumentJsx/ResumeDocumentJsx';
 import './ResumePreview.css';
 
 const ResumePreview = ({ firstName, lastName }) => {
@@ -9,9 +6,7 @@ const ResumePreview = ({ firstName, lastName }) => {
     <div className='resumePreviewWrapper'>
       <div className='resumePreviewContent'>
         <div className='documentWrapper'>
-          <PDFViewer>
-            <ResumeDocument firstName={firstName} lastName={lastName} />
-          </PDFViewer>
+          <ResumeDocumentJsx firstName={firstName} lastName={lastName} />
         </div>
       </div>
     </div>

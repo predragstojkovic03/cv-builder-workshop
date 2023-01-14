@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 
@@ -13,28 +14,34 @@ const ResumeBuilderPage = () => {
   // const [dateOfBirth, setDateOfBirth] = useState('');
   // const [address, setAddress] = useState('');
   // const [imageUrl, setImageUrl] = useState('');
-  const [personalDetails, setPersonalDetails] = useState({
-    wantedJobTitle: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    country: '',
-    city: '',
-    dateOfBirth: '',
-    address: '',
-    imageUrl: '',
+  const [personalDetails, setPersonalDetails] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const personalDetailsSaved = JSON.parse(saved).personalDetails;
+    return (
+      personalDetailsSaved || {
+        wantedJobTitle: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        country: '',
+        city: '',
+        dateOfBirth: '',
+        address: '',
+        imageUrl: '',
+      }
+    );
   });
 
-  console.log(personalDetails);
+  // console.log(personalDetails);
 
   return (
-    <div className='flex full-width'>
+    <div className='flex full-width position-relative'>
       <ResumeEditor
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
       />
-      <ResumePreview />
+      <ResumePreview personalDetails={personalDetails} />
     </div>
   );
 };

@@ -1,0 +1,91 @@
+.resumeDocument {
+    width: 21cm !important;
+    height: 29.7cm !important;
+    display: flex;
+    background: white;
+    overflow: hidden;
+}
+
+.aside {
+    background: #ff8a8a;
+    width: 30%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.firstName {
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.lastName {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.wantedJobTitle{
+    font-weight: 500;
+    text-transform: uppercase;
+    border-top: solid black  1px;
+    padding-top: 4px;
+}
+
+.img-container {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    border: solid #800020 5px;
+    overflow: hidden;
+}
+
+.profile-img{
+    height: auto;
+    width: 100%;
+}
+
+
+.icon,
+.text {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.socialAndMail {
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+.socialIconAndText{
+    margin-bottom: 0;
+    margin-top: 16px;
+    white-space: pre-line;
+}
+
+
+

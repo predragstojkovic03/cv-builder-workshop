@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Input from '../Input/Input';
 
 const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
   const updatedPersonalDetails = (e) => {
     setPersonalDetails({ ...personalDetails, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      'FORM_DATA',
+      JSON.stringify({ personalDetails })
+    );
+  }, [personalDetails]);
 
   return (
     <div className='personalDetailsWrapper'>
@@ -14,6 +21,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Wanted Job Title'
           type='text'
           name='wantedJobTitle'
+          value={personalDetails.wantedJobTitle}
           onChange={updatedPersonalDetails}
         />
 
@@ -21,6 +29,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Profile Picture'
           type='text'
           name='imageUrl'
+          value={personalDetails.imageUrl}
           onChange={updatedPersonalDetails}
         />
       </div>
@@ -29,6 +38,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='First Name'
           type='text'
           name='firstName'
+          value={personalDetails.firstName}
           onChange={updatedPersonalDetails}
         />
 
@@ -36,6 +46,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Last Name'
           type='text'
           name='lastName'
+          value={personalDetails.lastName}
           onChange={updatedPersonalDetails}
         />
       </div>
@@ -44,6 +55,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Email'
           type='text'
           name='email'
+          value={personalDetails.email}
           onChange={updatedPersonalDetails}
         />
 
@@ -51,6 +63,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Phone'
           type='text'
           name='phone'
+          value={personalDetails.phone}
           onChange={updatedPersonalDetails}
         />
       </div>
@@ -59,6 +72,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Country'
           type='text'
           name='country'
+          value={personalDetails.country}
           onChange={updatedPersonalDetails}
         />
 
@@ -66,6 +80,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='City'
           type='text'
           name='city'
+          value={personalDetails.city}
           onChange={updatedPersonalDetails}
         />
       </div>
@@ -74,6 +89,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Address'
           type='text'
           name='address'
+          value={personalDetails.address}
           onChange={updatedPersonalDetails}
         />
 
@@ -81,6 +97,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           labelText='Date of Birth'
           type='text'
           name='dateOfBirth'
+          value={personalDetails.dateOfBirth}
           onChange={updatedPersonalDetails}
         />
       </div>

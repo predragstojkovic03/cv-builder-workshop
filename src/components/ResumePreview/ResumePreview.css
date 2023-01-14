@@ -29,6 +29,8 @@
 .documentWrapper {
   position: relative;
   border-radius: 15px;
+  min-width: 21cm !important;
+  min-height: 29.7cm !important;
   overflow: hidden;
   transform: scale(var(--resume-scale-regular));
   transition: 250ms ease;

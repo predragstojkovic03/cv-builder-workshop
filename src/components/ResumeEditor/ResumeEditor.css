@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.resumeEditorHeading {
+  display:flex;
+  justify-content: space-between;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1200px) {

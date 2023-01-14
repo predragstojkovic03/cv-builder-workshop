@@ -7,7 +7,7 @@ import { useRef, useState } from 'react';
 //import generatePDF from '../../utils/generatePDF';
 import { useReactToPrint } from 'react-to-print';
 
-const ResumePreview = ({ firstName, lastName }) => {
+const ResumePreview = ({ personalDetails }) => {
   const [showDonwloadOverlay, setShowDonwloadOverlay] = useState(false);
 
   const resumeToPrintRef = useRef();
@@ -47,8 +47,7 @@ const ResumePreview = ({ firstName, lastName }) => {
         </div>
         <ResumeDocumentJsx
           innerRef={resumeToPrintRef}
-          firstName={firstName}
-          lastName={lastName}
+          personalDetails={personalDetails}
         />
       </div>
     </div>

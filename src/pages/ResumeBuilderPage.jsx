@@ -14,17 +14,23 @@ const ResumeBuilderPage = () => {
   // const [dateOfBirth, setDateOfBirth] = useState('');
   // const [address, setAddress] = useState('');
   // const [imageUrl, setImageUrl] = useState('');
-  const [personalDetails, setPersonalDetails] = useState({
-    wantedJobTitle: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    country: '',
-    city: '',
-    dateOfBirth: '',
-    address: '',
-    imageUrl: '',
+  const [personalDetails, setPersonalDetails] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const personalDetailsSaved = JSON.parse(saved).personalDetails;
+    return (
+      personalDetailsSaved || {
+        wantedJobTitle: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        country: '',
+        city: '',
+        dateOfBirth: '',
+        address: '',
+        imageUrl: '',
+      }
+    );
   });
 
   // console.log(personalDetails);
@@ -35,10 +41,7 @@ const ResumeBuilderPage = () => {
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
       />
-      <ResumePreview
-        firstName={personalDetails.firstName}
-        lastName={personalDetails.lastName}
-      />
+      <ResumePreview personalDetails={personalDetails} />
     </div>
   );
 };

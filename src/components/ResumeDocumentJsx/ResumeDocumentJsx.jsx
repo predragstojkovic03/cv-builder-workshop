@@ -1,7 +1,11 @@
+/*
+  Komponenta se zove ResumeDocumentJsx jer je pre postojala komponenta ResumeDocument koja je bila instant renderovani pdf,
+  ali se sad koristi JSX(Html) pa sam tako nazavao komponentu
+*/
+
 import React from 'react';
 
 import { AiOutlineMail } from 'react-icons/ai';
-import { ImLinkedin2 } from 'react-icons/im';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
 import './ResumeDocumentJsx.css';
@@ -23,7 +27,7 @@ const ResumeDocumentJsx = ({
         <div className='heading'>
           {imageUrl && (
             <div className='img-container'>
-              <img className='profile-img' src={imageUrl} />
+              <img className='profile-img' alt='Profile' src={imageUrl} />
             </div>
           )}
           <h1 className='firstName'>{firstName}</h1>

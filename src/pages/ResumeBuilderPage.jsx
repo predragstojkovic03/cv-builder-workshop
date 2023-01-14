@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 

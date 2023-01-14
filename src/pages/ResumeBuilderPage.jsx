@@ -15,7 +15,7 @@ const ResumeBuilderPage = () => {
   // const [imageUrl, setImageUrl] = useState('');
   const [personalDetails, setPersonalDetails] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
-    const personalDetailsSaved = JSON.parse(saved).personalDetails;
+    const personalDetailsSaved = saved && JSON.parse(saved).personalDetails;
     return (
       personalDetailsSaved || {
         wantedJobTitle: '',

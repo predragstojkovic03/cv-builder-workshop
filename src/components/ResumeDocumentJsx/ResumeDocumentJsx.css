@@ -1,3 +1,8 @@
+/* This @page is used to set the strint document size and orientation */
+@page {
+    size: A4 portrait;
+}
+
 .resumeDocument {
     width: 21cm !important;
     height: 29.7cm !important;
@@ -8,7 +13,7 @@
 
 .aside {
     background: #ff8a8a;
-    width: 30%;
+    width: 16rem;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -28,7 +33,6 @@ h3 {
 
 .firstName {
     font-weight: 300;
-    margin-bottom: 8px;
 }
 
 .lastName {
@@ -69,7 +73,7 @@ h3 {
 .text {
     margin: 0;
     padding: 0;
-    width: 100%;
+    max-width: 100%;
 }
 
 .icon {
@@ -82,9 +86,7 @@ h3 {
 }
 
 .socialIconAndText{
-    margin-bottom: 0;
     margin-top: 16px;
-    white-space: pre-line;
 }
 
 

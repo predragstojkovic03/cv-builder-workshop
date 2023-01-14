@@ -4,7 +4,6 @@ import { BiDownload } from 'react-icons/bi';
 
 import './ResumePreview.css';
 import { useRef, useState } from 'react';
-//import generatePDF from '../../utils/generatePDF';
 import { useReactToPrint } from 'react-to-print';
 
 const ResumePreview = ({ personalDetails }) => {
@@ -14,6 +13,8 @@ const ResumePreview = ({ personalDetails }) => {
 
   const printResume = useReactToPrint({
     content: () => resumeToPrintRef.current,
+    documentTitle: 'Vaš CV',
+    removeAfterPrint: true,
   });
 
   const onMouseOver = () => {

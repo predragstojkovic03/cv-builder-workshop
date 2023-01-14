@@ -10,8 +10,8 @@
 
 .btn-circle {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .btn-primary {
@@ -19,6 +19,21 @@
     border: 1px solid #0070f3;
     color: #fff;
 }
+
+.btn-download-pdf {
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 36px;
+  }
+
+  .btn-download-pdf:hover {
+    font-size: 40px;
+  }
 
 .btn-primary:hover {
     background: #0268dd;

@@ -45,7 +45,10 @@ const ResumeDocumentJsx = ({
           )}
           {email && (
             <div className='socialIconAndText'>
-              <AiOutlineMail className='icon' /> <p className='text'>{email}</p>
+              <AiOutlineMail className='icon' />{' '}
+              <a href={`mailto:${email}`} className='text'>
+                {email}
+              </a>
             </div>
           )}
         </div>

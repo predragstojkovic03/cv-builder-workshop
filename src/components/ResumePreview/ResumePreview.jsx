@@ -65,8 +65,9 @@ const ResumePreview = ({ personalDetails }) => {
         />
       </div>
       <div className='themeColors'>
-        {themeColors.map((color) => (
+        {themeColors.map((color, idx) => (
           <div
+            key={idx + 3}
             onClick={() => changeThemeColor(color)}
             className={`colorCircle ${color} `}
           >

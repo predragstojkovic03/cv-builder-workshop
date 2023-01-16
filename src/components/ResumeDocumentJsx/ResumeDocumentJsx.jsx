@@ -20,10 +20,11 @@ const ResumeDocumentJsx = ({
     phone,
   },
   innerRef,
+  selectedThemeColor,
 }) => {
   return (
     <div className='resumeDocument' ref={innerRef}>
-      <div className='aside'>
+      <div className={`aside ${selectedThemeColor}`}>
         <div className='heading'>
           {imageUrl && (
             <div className='img-container'>

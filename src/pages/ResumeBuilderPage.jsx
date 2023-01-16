@@ -4,10 +4,13 @@ import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 
 const ResumeBuilderPage = () => {
+  const [previewActive, setPreviewActive] = useState(false);
+
   const toggleDocumentShow = (e) => {
     e.preventDefault();
 
     setResumeResponsiveShowing(!resumeResponsiveShowing);
+    setPreviewActive(!previewActive);
   };
 
   // useEffect(() => {
@@ -46,6 +49,7 @@ const ResumeBuilderPage = () => {
       <ResumePreview
         personalDetails={personalDetails}
         resumeResponsiveShowing={resumeResponsiveShowing}
+        previewActive={previewActive}
       />
       <Button
         onClick={(e) => toggleDocumentShow(e)}

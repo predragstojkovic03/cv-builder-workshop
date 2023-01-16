@@ -8,7 +8,11 @@ import './ResumePreview.css';
 import { useRef, useState, useEffect } from 'react';
 import { useReactToPrint } from 'react-to-print';
 
-const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
+const ResumePreview = ({
+  personalDetails,
+  resumeResponsiveShowing,
+  previewActive,
+}) => {
   const [showDonwloadOverlay, setShowDonwloadOverlay] = useState(false);
   const [themeColors, setThemeColors] = useState([
     'theme-red',
@@ -70,7 +74,11 @@ const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
   };
 
   return (
-    <div className={`resumePreviewWrapper ${resumeShowingState}`}>
+    <div
+      className={`resumePreviewWrapper ${
+        previewActive ? 'resumeShowingResponsive' : 'resumeNotShowing'
+      }`}
+    >
       <div
         className='documentWrapper'
         onMouseOver={onMouseOver}

@@ -24,7 +24,6 @@ const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
   useEffect(() => {
     const handleWindowResize = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);
-      console.log(windowSize[0]);
     };
 
     window.addEventListener('resize', handleWindowResize);

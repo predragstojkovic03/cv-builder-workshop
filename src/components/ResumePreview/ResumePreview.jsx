@@ -1,6 +1,7 @@
 import ResumeDocumentJsx from '../ResumeDocumentJsx/ResumeDocumentJsx';
 import Button from '../Button/Button';
 import { BiDownload } from 'react-icons/bi';
+import { BiCheck } from 'react-icons/bi';
 import ResumeShowingEnum from '../../enums/ResumeShowingEnum';
 
 import './ResumePreview.css';
@@ -9,6 +10,13 @@ import { useReactToPrint } from 'react-to-print';
 
 const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
   const [showDonwloadOverlay, setShowDonwloadOverlay] = useState(false);
+  const [themeColors, setThemeColors] = useState([
+    'theme-red',
+    'theme-blue',
+    'theme-green',
+    'theme-dark-blue',
+  ]);
+  const [selectedThemeColor, setSelectedThemeColor] = useState('theme-red');
 
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
@@ -57,6 +65,10 @@ const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
     setShowDonwloadOverlay(false);
   };
 
+  const changeThemeColor = (color) => {
+    setSelectedThemeColor(color);
+  };
+
   return (
     <div className={`resumePreviewWrapper ${resumeShowingState}`}>
       <div
@@ -81,7 +93,19 @@ const ResumePreview = ({ personalDetails, resumeResponsiveShowing }) => {
         <ResumeDocumentJsx
           innerRef={resumeToPrintRef}
           personalDetails={personalDetails}
+          selectedThemeColor={selectedThemeColor}
         />
+      </div>
+      <div className='themeColors'>
+        {themeColors.map((color, idx) => (
+          <div
+            key={idx + 3}
+            onClick={() => changeThemeColor(color)}
+            className={`colorCircle ${color} `}
+          >
+            {color === selectedThemeColor && <BiCheck />}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cv-builder-workshop/static/css/main.79f347f1.css",
+    "main.js": "/cv-builder-workshop/static/js/main.fb6a8cb2.js",
+    "index.html": "/cv-builder-workshop/index.html",
+    "main.79f347f1.css.map": "/cv-builder-workshop/static/css/main.79f347f1.css.map",
+    "main.fb6a8cb2.js.map": "/cv-builder-workshop/static/js/main.fb6a8cb2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79f347f1.css",
+    "static/js/main.fb6a8cb2.js"
+  ]
+}

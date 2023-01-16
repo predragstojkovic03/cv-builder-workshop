@@ -1,18 +1,21 @@
 import { useState } from 'react';
+import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 
 const ResumeBuilderPage = () => {
-  // const [wantedJobTitle, setWantedJobTitle] = useState('');
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [phone, setPhone] = useState('');
-  // const [country, setCountry] = useState('');
-  // const [city, setCity] = useState('');
-  // const [dateOfBirth, setDateOfBirth] = useState('');
-  // const [address, setAddress] = useState('');
-  // const [imageUrl, setImageUrl] = useState('');
+  const toggleDocumentShow = (e) => {
+    e.preventDefault();
+
+    setResumeResponsiveShowing(!resumeResponsiveShowing);
+  };
+
+  // useEffect(() => {
+  //   setIsDocumentBtnToggled(true);
+  // }, []);
+
+  const [resumeResponsiveShowing, setResumeResponsiveShowing] = useState(false);
+
   const [personalDetails, setPersonalDetails] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
     const personalDetailsSaved = saved && JSON.parse(saved).personalDetails;
@@ -40,7 +43,16 @@ const ResumeBuilderPage = () => {
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
       />
-      <ResumePreview personalDetails={personalDetails} />
+      <ResumePreview
+        personalDetails={personalDetails}
+        resumeResponsiveShowing={resumeResponsiveShowing}
+      />
+      <Button
+        onClick={(e) => toggleDocumentShow(e)}
+        styleClasses='btn btn-primary btn-circle btn-resume-preview'
+      >
+        {resumeResponsiveShowing ? 'Hide' : 'Preview'}
+      </Button>
     </div>
   );
 };

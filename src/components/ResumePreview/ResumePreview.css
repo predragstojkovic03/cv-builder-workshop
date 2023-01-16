@@ -1,4 +1,4 @@
-:root{
+:root {
   --resume-scale-regular: 0.7;
   --resume-scale-lower-1: 0.6;
   --resume-scale-lower-2: 0.5;
@@ -20,7 +20,7 @@
   background: #656e83;
 }
 
-.resumePreviewWrapper{
+.resumePreviewWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,8 @@
   overflow: hidden;
   transform: scale(var(--resume-scale-regular));
   transition: 250ms ease;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .documentWrapper:hover {
@@ -59,7 +60,6 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
-
 /* Media Queries */
 
 @media only screen and (max-width: 1200px) {
@@ -74,23 +74,68 @@
 }
 
 @media only screen and (max-height: 850px) {
-  .documentWrapper{
-      transform: scale(var(--resume-scale-lower-1));
+  .documentWrapper {
+    transform: scale(var(--resume-scale-lower-1));
   }
 
   .documentWrapper:hover {
-      transform: scale(var(--resume-scale-lower-1-hover));
-      border-radius: 10px;
+    transform: scale(var(--resume-scale-lower-1-hover));
+    border-radius: 10px;
   }
 }
 
 @media only screen and (max-height: 760px) {
-  .documentWrapper{
-      transform: scale(var(--resume-scale-lower-2));
+  .documentWrapper {
+    transform: scale(var(--resume-scale-lower-2));
   }
 
   .documentWrapper:hover {
-      transform: scale(var(--resume-scale-lower-2-hover));
-      border-radius: 10px;
+    transform: scale(var(--resume-scale-lower-2-hover));
+    border-radius: 10px;
   }
+}
+
+.themeColors {
+  position: absolute;
+  left: 96%;
+  top: 50%;
+  transform: translate(-96%, -50%);
+  background: #4f586b;
+  padding: 12px 8px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colorCircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 250ms ease;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+}
+
+.theme-red {
+  background: #ff8a8a;
+  border: 2px solid #df6e6e;
+}
+
+.theme-blue {
+  background: #4356d4;
+  border: 2px solid #6979e2;
+}
+
+.theme-green {
+  background: #179f76;
+  border: 2px solid #1b8062;
+}
+
+.theme-dark-blue {
+  background: #256983;
+  border: 2px solid #3181a0;
 }

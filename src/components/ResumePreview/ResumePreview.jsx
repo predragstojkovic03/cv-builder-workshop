@@ -1,6 +1,7 @@
 import ResumeDocumentJsx from '../ResumeDocumentJsx/ResumeDocumentJsx';
 import Button from '../Button/Button';
 import { BiDownload } from 'react-icons/bi';
+import { BiCheck } from 'react-icons/bi';
 
 import './ResumePreview.css';
 import { useRef, useState } from 'react';
@@ -8,6 +9,13 @@ import { useReactToPrint } from 'react-to-print';
 
 const ResumePreview = ({ personalDetails }) => {
   const [showDonwloadOverlay, setShowDonwloadOverlay] = useState(false);
+  const [themeColors, setThemeColors] = useState([
+    'theme-red',
+    'theme-blue',
+    'theme-green',
+    'theme-dark-blue',
+  ]);
+  const [selectedThemeColor, setSelectedThemeColor] = useState('theme-red');
 
   const resumeToPrintRef = useRef();
 
@@ -23,6 +31,10 @@ const ResumePreview = ({ personalDetails }) => {
 
   const onMouseLeave = () => {
     setShowDonwloadOverlay(false);
+  };
+
+  const changeThemeColor = (color) => {
+    setSelectedThemeColor(color);
   };
 
   return (
@@ -49,7 +61,18 @@ const ResumePreview = ({ personalDetails }) => {
         <ResumeDocumentJsx
           innerRef={resumeToPrintRef}
           personalDetails={personalDetails}
+          selectedThemeColor={selectedThemeColor}
         />
+      </div>
+      <div className='themeColors'>
+        {themeColors.map((color) => (
+          <div
+            onClick={() => changeThemeColor(color)}
+            className={`colorCircle ${color} `}
+          >
+            {color === selectedThemeColor && <BiCheck />}
+          </div>
+        ))}
       </div>
     </div>
   );

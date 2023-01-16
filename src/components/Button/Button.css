@@ -31,6 +31,25 @@
     font-size: 36px;
   }
 
+  .btn-resume-preview {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 8px 15px #00428d41;
+    transition: all 0.3s ease 0s;
+  }
+
+  .btn-resume-preview:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px #024ea554;
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
   .btn-download-pdf:hover {
     font-size: 40px;
   }
@@ -39,3 +58,9 @@
     background: #0268dd;
     border: 1px solid #0268dd;
 }
+
+@media only screen and (min-width: 1201px) {
+    .btn-resume-preview {
+      display: none;
+    }
+  }

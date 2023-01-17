@@ -41,7 +41,6 @@ const ResumeBuilderPage = () => {
       <ResumeEditor
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
-        previewActive={previewActive}
       />
       <ResumePreview
         personalDetails={personalDetails}

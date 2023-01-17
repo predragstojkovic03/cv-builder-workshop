@@ -22,7 +22,7 @@ const ResumePreview = ({ personalDetails, previewActive }) => {
   const printResume = useReactToPrint({
     content: () => resumeToPrintRef.current,
     documentTitle: 'Vaš CV',
-    removeAfterPrint: true,
+    removeAfterPrint: false, // It is false by default but if set true, on mobile phones print will not work!
   });
 
   const onMouseOver = () => {

@@ -3,11 +3,17 @@ import Button from '../Button/Button';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import './ResumeEditor.css';
 
-const ResumeEditor = ({ personalDetails, setPersonalDetails }) => {
+const ResumeEditor = ({
+  personalDetails,
+  setPersonalDetails,
+  previewActive,
+}) => {
   const navigate = useNavigate();
 
   return (
-    <div className='resumeEditorWrapper'>
+    <div
+      className={`resumeEditorWrapper ${previewActive ? 'display-none' : ''}`}
+    >
       <div className='resumeEditorHeading'>
         Create your Resume{' '}
         <Button styleClasses='btn btn-primary' onClick={() => navigate('/')}>

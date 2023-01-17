@@ -8,16 +8,12 @@ const ResumeBuilderPage = () => {
 
   const toggleDocumentShow = (e) => {
     e.preventDefault();
-
-    setResumeResponsiveShowing(!resumeResponsiveShowing);
     setPreviewActive(!previewActive);
   };
 
   // useEffect(() => {
   //   setIsDocumentBtnToggled(true);
   // }, []);
-
-  const [resumeResponsiveShowing, setResumeResponsiveShowing] = useState(false);
 
   const [personalDetails, setPersonalDetails] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
@@ -48,14 +44,13 @@ const ResumeBuilderPage = () => {
       />
       <ResumePreview
         personalDetails={personalDetails}
-        resumeResponsiveShowing={resumeResponsiveShowing}
         previewActive={previewActive}
       />
       <Button
         onClick={(e) => toggleDocumentShow(e)}
         styleClasses='btn btn-primary btn-circle btn-resume-preview'
       >
-        {resumeResponsiveShowing ? 'Hide' : 'Preview'}
+        {previewActive ? 'Hide' : 'Preview'}
       </Button>
     </div>
   );

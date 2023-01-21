@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import './ResumeEditor.css';
 
@@ -19,6 +20,7 @@ const ResumeEditor = ({ personalDetails, setPersonalDetails }) => {
           personalDetails={personalDetails}
           setPersonalDetails={setPersonalDetails}
         />
+        <EmploymentHistory />
       </form>
     </div>
   );

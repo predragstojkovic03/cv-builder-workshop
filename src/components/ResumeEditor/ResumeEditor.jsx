@@ -12,6 +12,14 @@ const ResumeEditor = ({
 }) => {
   const navigate = useNavigate();
 
+  const removeEmploymentHistoryItem = (id) => {
+    const updatedData = employmentHistory.filter(
+      (history) => history.id !== id
+    );
+
+    setEmploymentHistory(updatedData);
+  };
+
   return (
     <div className={`resumeEditorWrapper`}>
       <div className='resumeEditorHeading'>
@@ -26,6 +34,7 @@ const ResumeEditor = ({
           setPersonalDetails={setPersonalDetails}
         />
         <EmploymentHistory
+          removeEmploymentHistoryItem={removeEmploymentHistoryItem}
           employmentHistory={employmentHistory}
           setEmploymentHistory={setEmploymentHistory}
         />

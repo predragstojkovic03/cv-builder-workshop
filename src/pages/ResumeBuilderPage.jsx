@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
+import EmploymentHistoryItem from '../components/EmploymentHistoryItem/EmploymentHistoryItem';
 import { v4 as uuidv4 } from 'uuid';
+import Modal from '../components/Modal/Modal';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
+  // eslint-disable-next-line
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleDocumentShow = (e) => {
     e.preventDefault();
@@ -36,10 +40,32 @@ const ResumeBuilderPage = () => {
   });
 
   const [employmentHistory, setEmploymentHistory] = useState([
-    { companyName: 'Google', id: uuidv4() },
-    { companyName: 'Microsoft', id: uuidv4() },
-    { companyName: 'Netflix', id: uuidv4() },
-    { companyName: 'Netflix', id: uuidv4() },
+    {
+      id: uuidv4(),
+      companyName: 'Google',
+      firstName: 'Michael',
+      content: function () {
+        return <EmploymentHistoryItem history={this} />;
+      },
+    },
+    {
+      id: uuidv4(),
+      companyName: 'Microsoft',
+      firstName: 'Michael',
+
+      content: function () {
+        return <EmploymentHistoryItem history={this} />;
+      },
+    },
+    {
+      id: uuidv4(),
+      companyName: 'Bing',
+      firstName: 'Michael',
+
+      content: function () {
+        return <EmploymentHistoryItem history={this} />;
+      },
+    },
   ]);
 
   // useEffect(() => {
@@ -72,6 +98,11 @@ const ResumeBuilderPage = () => {
       >
         {previewActive ? 'Hide' : 'Preview'}
       </Button>
+      {modalOpen && (
+        <Modal>
+          <p>Modal content</p>
+        </Modal>
+      )}
     </div>
   );
 };

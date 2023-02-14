@@ -23,10 +23,14 @@ const SortableItem = (props) => {
             <div className='dragHandle' {...attributes} {...listeners}>
               <RxDragHandleDots2 className='dragHandleIcon' />
             </div>
-            <p className='itemName'>{props.text}</p>
+            <div className='dndInfo'>{props.content()}</div>
           </div>
           <div className='dndItemRight flex align-items-center'>
-            <button type='button' className='dndItemDeleteBtn'>
+            <button
+              type='button'
+              className='dndItemDeleteBtn'
+              onClick={() => props.removeItem(props.id)}
+            >
               <AiOutlineDelete className='dndItemDeleteIcon' />
             </button>
           </div>

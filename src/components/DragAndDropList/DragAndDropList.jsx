@@ -6,7 +6,7 @@ import {
 } from '@dnd-kit/sortable';
 import SortableItem from '../SortableItem/SortableItem';
 
-const DragAndDropList = ({ items, setItems }) => {
+const DragAndDropList = ({ items, setItems, removeItem }) => {
   const handleDragEnd = (event) => {
     //console.log('Drag end called');
     const { active, over } = event;
@@ -29,7 +29,13 @@ const DragAndDropList = ({ items, setItems }) => {
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={items} strategy={verticalListSortingStrategy}>
         {items.map((item) => (
-          <SortableItem key={item.id} id={item.id} text={item.companyName} />
+          <SortableItem
+            key={item.id}
+            id={item.id}
+            companyName={item.companyName}
+            content={item.content}
+            removeItem={removeItem}
+          />
         ))}
       </SortableContext>
     </DndContext>

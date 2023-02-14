@@ -1,10 +1,18 @@
-import { useEffect } from 'react';
 import DragAndDropList from '../DragAndDropList/DragAndDropList';
+import { v4 as uuidv4 } from 'uuid';
 
-const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
+const EmploymentHistory = ({
+  employmentHistory,
+  setEmploymentHistory,
+  removeEmploymentHistoryItem,
+}) => {
   const addItem = (e) => {
     e.preventDefault();
-    const newItem = { companyName: 'Company name' };
+    const newItem = {
+      companyName: 'Company name',
+      id: uuidv4(),
+      contentToDisplay: { mainText: 'Company name' },
+    };
     setEmploymentHistory([...employmentHistory, newItem]);
   };
 
@@ -14,6 +22,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
       <DragAndDropList
         items={employmentHistory}
         setItems={setEmploymentHistory}
+        removeItem={removeEmploymentHistoryItem}
       />
       <div className='flex fullWidth justify-content-center'>
         <button

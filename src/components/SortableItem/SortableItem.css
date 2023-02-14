@@ -1,0 +1,39 @@
+.dndItemWrapper {
+    padding: 32px 24px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);   
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    transition: 250ms all ease;
+}
+
+.dndItemWrapper:hover {
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
+}
+
+.dndItemContent {
+    display: flex;
+    align-items: center;
+}
+
+.dragHandle {
+    margin-right: 16px;
+    padding: 16px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+    transition: 250ms ease all;
+}
+
+.dragHandle:hover {
+    background-color: #f2f2f2;
+}
+
+.dragHandleIcon {
+    font-size: 1rem;
+}

@@ -34,6 +34,12 @@ const ResumeBuilderPage = () => {
     );
   });
 
+  const [employmentHistory, setEmploymentHistory] = useState([
+    { companyName: 'Google', id: 1 },
+    { companyName: 'Microsoft', id: 2 },
+    { companyName: 'Netflix', id: 3 },
+  ]);
+
   // console.log(personalDetails);
 
   return (
@@ -41,10 +47,14 @@ const ResumeBuilderPage = () => {
       <ResumeEditor
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
+        employmentHistory={employmentHistory}
+        setEmploymentHistory={setEmploymentHistory}
       />
       <ResumePreview
         personalDetails={personalDetails}
         previewActive={previewActive}
+        employmentHistory={employmentHistory}
+        setEmploymentHistory={setEmploymentHistory}
       />
       <Button
         onClick={(e) => toggleDocumentShow(e)}

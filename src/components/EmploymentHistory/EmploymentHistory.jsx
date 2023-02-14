@@ -1,10 +1,14 @@
 import React from 'react';
+import DragAndDropList from '../DragAndDropList/DragAndDropList';
 
-const EmploymentHistory = () => {
+const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
   return (
     <div className='employmentHistoryWrapper'>
-      <h2>Personal Details</h2>
-      <DragAndDropList></DragAndDropList>
+      <h2>Employment history</h2>
+      <DragAndDropList
+        employmentHistory={employmentHistory}
+        setEmploymentHistory={setEmploymentHistory}
+      />
     </div>
   );
 };

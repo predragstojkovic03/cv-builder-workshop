@@ -1,9 +1,5 @@
 const EmploymentHistoryItem = ({ history }) => {
-  return (
-    <p>
-      {history.id} | {history.companyName}
-    </p>
-  );
+  return <p>{history.companyName}</p>;
 };
 
 export default EmploymentHistoryItem;

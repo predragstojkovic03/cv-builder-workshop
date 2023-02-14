@@ -14,9 +14,17 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
 }
 
-.dndItemContent {
-    display: flex;
-    align-items: center;
+.dndItemDeleteBtn {
+    all: unset;
+    font-size: 1.5rem;
+}
+
+.dndItemDeleteBtn:hover {
+    color: red;
+}
+
+.dndItemDeleteBtn:focus {
+    color: red;
 }
 
 .dragHandle {

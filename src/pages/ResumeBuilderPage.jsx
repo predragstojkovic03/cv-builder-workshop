@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
+import { v4 as uuidv4 } from 'uuid';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
@@ -35,10 +36,19 @@ const ResumeBuilderPage = () => {
   });
 
   const [employmentHistory, setEmploymentHistory] = useState([
-    { companyName: 'Google', id: 1 },
-    { companyName: 'Microsoft', id: 2 },
-    { companyName: 'Netflix', id: 3 },
+    { companyName: 'Google', id: uuidv4() },
+    { companyName: 'Microsoft', id: uuidv4() },
+    { companyName: 'Netflix', id: uuidv4() },
+    { companyName: 'Netflix', id: uuidv4() },
   ]);
+
+  // useEffect(() => {
+  //   setEmploymentHistory((employmentHistory) => {
+  //     return employmentHistory.map((item) => {
+  //       return { ...item, contentToDisplay: { text: item.companyName } };
+  //     });
+  //   });
+  // }, [employmentHistory, setEmploymentHistory]);
 
   // console.log(personalDetails);
 

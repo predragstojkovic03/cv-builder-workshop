@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -7,13 +6,7 @@ import {
 } from '@dnd-kit/sortable';
 import SortableItem from '../SortableItem/SortableItem';
 
-const DragAndDropList = ({ employmentHistory, setEmploymentHistory }) => {
-  const [languages, setLanguages] = useState([
-    'JavaScript',
-    'Python',
-    'TypeScript',
-  ]);
-
+const DragAndDropList = ({ items, setItems }) => {
   const handleDragEnd = (event) => {
     //console.log('Drag end called');
     const { active, over } = event;
@@ -21,7 +14,7 @@ const DragAndDropList = ({ employmentHistory, setEmploymentHistory }) => {
     // console.log('OVER:' + over.id);
 
     if (active.id !== over.id) {
-      setEmploymentHistory((items) => {
+      setItems((items) => {
         console.log(active);
         console.log(items);
         const activeIndex = items.findIndex((item) => item.id === active.id);
@@ -34,12 +27,9 @@ const DragAndDropList = ({ employmentHistory, setEmploymentHistory }) => {
 
   return (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <SortableContext
-        items={employmentHistory}
-        strategy={verticalListSortingStrategy}
-      >
-        {employmentHistory.map((item) => (
-          <SortableItem key={item.id} id={item.id} />
+      <SortableContext items={items} strategy={verticalListSortingStrategy}>
+        {items.map((item) => (
+          <SortableItem key={item.id} id={item.id} text={item.companyName} />
         ))}
       </SortableContext>
     </DndContext>

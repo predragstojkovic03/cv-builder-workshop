@@ -1,4 +1,3 @@
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';

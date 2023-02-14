@@ -31,6 +31,10 @@ a {
   justify-content: center;
 }
 
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
 .fullWidth {
   width: 100%;
 }

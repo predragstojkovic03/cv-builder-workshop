@@ -1,10 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import './ResumeEditor.css';
 
-const ResumeEditor = ({ personalDetails, setPersonalDetails }) => {
+const ResumeEditor = ({
+  personalDetails,
+  setPersonalDetails,
+  employmentHistory,
+  setEmploymentHistory,
+}) => {
   const navigate = useNavigate();
+
+  const removeEmploymentHistoryItem = (id) => {
+    const updatedData = employmentHistory.filter(
+      (history) => history.id !== id
+    );
+
+    setEmploymentHistory(updatedData);
+  };
 
   return (
     <div className={`resumeEditorWrapper`}>
@@ -18,6 +32,11 @@ const ResumeEditor = ({ personalDetails, setPersonalDetails }) => {
         <PersonalDetails
           personalDetails={personalDetails}
           setPersonalDetails={setPersonalDetails}
+        />
+        <EmploymentHistory
+          removeEmploymentHistoryItem={removeEmploymentHistoryItem}
+          employmentHistory={employmentHistory}
+          setEmploymentHistory={setEmploymentHistory}
         />
       </form>
     </div>

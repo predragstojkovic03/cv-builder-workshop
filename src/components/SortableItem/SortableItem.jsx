@@ -20,9 +20,14 @@ const SortableItem = (props) => {
       <div className='dndItemWrapper'>
         <div className='dndItemContent fullWidth flex align-items-center justify-content-space-between'>
           <div className='dndItemLeft flex'>
-            <div className='dragHandle' {...attributes} {...listeners}>
+            <button
+              type='button'
+              className='dragHandle'
+              {...attributes}
+              {...listeners}
+            >
               <RxDragHandleDots2 className='dragHandleIcon' />
-            </div>
+            </button>
             <div className='dndInfo'>{props.content()}</div>
           </div>
           <div className='dndItemRight flex align-items-center'>

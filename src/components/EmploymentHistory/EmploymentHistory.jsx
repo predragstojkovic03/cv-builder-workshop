@@ -1,5 +1,6 @@
 import DragAndDropList from '../DragAndDropList/DragAndDropList';
 import { v4 as uuidv4 } from 'uuid';
+import EmploymentHistoryItem from '../EmploymentHistoryItem/EmploymentHistoryItem';
 
 const EmploymentHistory = ({
   employmentHistory,
@@ -11,14 +12,15 @@ const EmploymentHistory = ({
     const newItem = {
       companyName: 'Company name',
       id: uuidv4(),
-      contentToDisplay: { mainText: 'Company name' },
+      content: function () {
+        return <EmploymentHistoryItem history={this} />;
+      },
     };
     setEmploymentHistory([...employmentHistory, newItem]);
   };
 
   return (
     <div className='employmentHistoryWrapper'>
-      <h2>Employment history</h2>
       <DragAndDropList
         items={employmentHistory}
         setItems={setEmploymentHistory}

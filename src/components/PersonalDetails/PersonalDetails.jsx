@@ -15,7 +15,6 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
 
   return (
     <div className='personalDetailsWrapper'>
-      <h2>Personal Details</h2>
       <div className='inputRow'>
         <Input
           labelText='Wanted Job Title'

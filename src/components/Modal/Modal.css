@@ -3,7 +3,7 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    z-index: -5;
+    z-index: -1000;
 }
 
 .modalWrapper {
@@ -15,7 +15,7 @@
 .modalContainer {
     scrollbar-width: thin;
     min-height: 300px;
-    min-width: 450px;
+    min-width: 700px;
     max-height: 700px;
     overflow-y: auto;
     padding: 16px 16px;
@@ -25,11 +25,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    z-index: 5;
 }
 
 .modalHeader {
-    
+    margin-bottom: 24px;
+}
+
+.modalContent {
+  margin-bottom: 16px;
 }
 
 /* width */
@@ -55,5 +58,40 @@
   /* Handle on hover */
   .modalContainer::-webkit-scrollbar-thumb:hover {
     background: #0268dd;
+  }
+
+  @media (max-width: 768px) {
+    .modalContainer {
+      min-height: 300px;
+      min-width: 400px;
+  }
+  }
+
+  @media (max-width: 460px) {
+    .modalContainer {
+      min-height: 400px;
+      min-width: 300px;
+  }
+
+    .modalContainer .inputRow {
+      flex-direction: column !important;
+      margin-bottom: 0;
+      gap:unset;
+    }
+
+    input {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .modalContainer {
+      min-height: 400px;
+      min-width: 200px;
+    }
+
+    .modalHeader h3 {
+      font-size: 1rem;
+    }
   }
   

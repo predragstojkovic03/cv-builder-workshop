@@ -6,7 +6,7 @@ import {
 } from '@dnd-kit/sortable';
 import SortableItem from '../SortableItem/SortableItem';
 
-const DragAndDropList = ({ items, setItems, removeItem }) => {
+const DragAndDropList = ({ items, setItems, removeItem, onEdit }) => {
   const handleDragEnd = (event) => {
     //console.log('Drag end called');
     const { active, over } = event;
@@ -32,9 +32,10 @@ const DragAndDropList = ({ items, setItems, removeItem }) => {
           <SortableItem
             key={item.id}
             id={item.id}
-            companyName={item.companyName}
+            item={item}
             content={item.content}
             removeItem={removeItem}
+            onEdit={onEdit}
           />
         ))}
       </SortableContext>

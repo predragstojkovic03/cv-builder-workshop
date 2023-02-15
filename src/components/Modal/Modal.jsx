@@ -1,9 +1,15 @@
 import './Modal.css';
 
-const Modal = ({ header, children, setModalOpen }) => {
+const Modal = ({ header, children, setModalState }) => {
+  const closeModal = () => {
+    setModalState((previousState) => {
+      return { ...previousState, isOpen: false };
+    });
+  };
+
   return (
     <div className='modalWrapper flex justify-content-center align-items-center'>
-      <div className='backdrop' onClick={() => setModalOpen(false)}></div>
+      <div className='backdrop' onClick={closeModal}></div>
       <div className='modalContainer'>
         <div className='modalHeader'>
           <h3>{header}</h3>
@@ -13,7 +19,7 @@ const Modal = ({ header, children, setModalOpen }) => {
           <button
             type='button'
             className='btn btn-primary'
-            onClick={() => setModalOpen(false)}
+            onClick={closeModal}
           >
             Close
           </button>

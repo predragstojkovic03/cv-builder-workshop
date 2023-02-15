@@ -10,7 +10,7 @@ const ResumeEditor = ({
   setPersonalDetails,
   employmentHistory,
   setEmploymentHistory,
-  setModalOpen,
+  setModalState,
 }) => {
   const navigate = useNavigate();
 
@@ -29,12 +29,6 @@ const ResumeEditor = ({
         <Button styleClasses='btn btn-primary' onClick={() => navigate('/')}>
           Back to homepage
         </Button>
-        <Button
-          styleClasses='btn btn-primary'
-          onClick={() => setModalOpen(true)}
-        >
-          Show modal
-        </Button>
       </div>{' '}
       <form>
         <EditorSection heading='Personal Details'>
@@ -48,6 +42,7 @@ const ResumeEditor = ({
             removeEmploymentHistoryItem={removeEmploymentHistoryItem}
             employmentHistory={employmentHistory}
             setEmploymentHistory={setEmploymentHistory}
+            setModalState={setModalState}
           />
         </EditorSection>
       </form>

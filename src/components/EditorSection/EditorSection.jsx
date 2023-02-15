@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { RiArrowUpSLine } from 'react-icons/ri';
+
 import './EditorSection.css';
 
 const EditorSection = ({ heading, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleColapse = () => {
     setIsOpen((previousState) => !previousState);
@@ -23,22 +21,21 @@ const EditorSection = ({ heading, children }) => {
         <button
           type='button'
           onClick={toggleColapse}
-          className='btn btn-primary'
+          className={`btn btn-transparent collapseEditorSectionBtn ${
+            isOpen ? 'sectionOpen' : ''
+          }`}
         >
-          Collapse
+          <RiArrowUpSLine />
         </button>
       </div>
       <div
         className='editorSectionContent'
         ref={editorSectionContentRef}
-        style={
-          isOpen
-            ? { height: editorSectionContentRef.current.scrollHeight + 'px' }
-            : { height: '0px' }
-        }
+        style={isOpen ? { height: 'fit-content' } : { height: '0px' }}
       >
         {children}
       </div>
+      <hr className='editorSectionSeparator' />
     </div>
   );
 };

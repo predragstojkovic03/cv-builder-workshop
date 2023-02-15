@@ -42,15 +42,15 @@ const SortableItem = (props) => {
             >
               <RxDragHandleDots2 className='dragHandleIcon' />
             </button>
-            <div className='dndInfo'>{props.content()}</div>
+            <div className='dndInfo flex'>{props.content()}</div>
           </div>
           <div className='dndItemRight flex align-items-center'>
             <button
               type='button'
-              className='dndBtn dndItemDeleteBtn'
-              onClick={() => props.removeItem(props.id)}
+              className='dndBtn dndEditItemBtn'
+              onClick={() => props.onEdit(props.id)}
             >
-              <AiOutlineEdit className='dndEditItemBtn' />
+              <AiOutlineEdit className='dndEditItemIcon' />
             </button>
             <button
               type='button'

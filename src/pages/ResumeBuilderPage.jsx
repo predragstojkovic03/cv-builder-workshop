@@ -8,8 +8,11 @@ import Modal from '../components/Modal/Modal';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
-  // eslint-disable-next-line
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    header: 'Heading',
+    component: <p>No component</p>,
+  });
 
   const toggleDocumentShow = (e) => {
     e.preventDefault();
@@ -43,7 +46,9 @@ const ResumeBuilderPage = () => {
     {
       id: uuidv4(),
       companyName: 'Google',
-      firstName: 'Michael',
+      jobTitle: 'Developer',
+      startDate: 'jun 2016',
+      endDate: 'may 2020',
       content: function () {
         return <EmploymentHistoryItem history={this} />;
       },
@@ -51,7 +56,9 @@ const ResumeBuilderPage = () => {
     {
       id: uuidv4(),
       companyName: 'Microsoft',
-      firstName: 'Michael',
+      jobTitle: 'Developer',
+      startDate: 'jun 2016',
+      endDate: 'may 2020',
 
       content: function () {
         return <EmploymentHistoryItem history={this} />;
@@ -60,7 +67,9 @@ const ResumeBuilderPage = () => {
     {
       id: uuidv4(),
       companyName: 'Bing',
-      firstName: 'Michael',
+      jobTitle: 'Developer',
+      startDate: 'jun 2016',
+      endDate: 'may 2020',
 
       content: function () {
         return <EmploymentHistoryItem history={this} />;
@@ -85,7 +94,7 @@ const ResumeBuilderPage = () => {
         setPersonalDetails={setPersonalDetails}
         employmentHistory={employmentHistory}
         setEmploymentHistory={setEmploymentHistory}
-        setModalOpen={setModalOpen}
+        setModalState={setModalState}
       />
       <ResumePreview
         personalDetails={personalDetails}
@@ -100,22 +109,9 @@ const ResumeBuilderPage = () => {
         {previewActive ? 'Hide' : 'Preview'}
       </Button>
 
-      {modalOpen && (
-        <Modal setModalOpen={setModalOpen} header='Header'>
-          <h1>Modal content</h1>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
-          <h2>Modal content</h2>
+      {modalState.isOpen && (
+        <Modal setModalState={setModalState} header={modalState.header}>
+          {modalState.component}
         </Modal>
       )}
     </div>

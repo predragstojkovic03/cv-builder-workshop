@@ -85,6 +85,7 @@ const ResumeBuilderPage = () => {
         setPersonalDetails={setPersonalDetails}
         employmentHistory={employmentHistory}
         setEmploymentHistory={setEmploymentHistory}
+        setModalOpen={setModalOpen}
       />
       <ResumePreview
         personalDetails={personalDetails}
@@ -98,9 +99,23 @@ const ResumeBuilderPage = () => {
       >
         {previewActive ? 'Hide' : 'Preview'}
       </Button>
+
       {modalOpen && (
-        <Modal>
-          <p>Modal content</p>
+        <Modal setModalOpen={setModalOpen} header='Header'>
+          <h1>Modal content</h1>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
+          <h2>Modal content</h2>
         </Modal>
       )}
     </div>

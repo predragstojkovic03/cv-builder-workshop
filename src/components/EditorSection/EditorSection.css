@@ -1,0 +1,5 @@
+.editorSectionContent {
+    overflow: hidden;
+
+    transition: all 350ms ease;
+}

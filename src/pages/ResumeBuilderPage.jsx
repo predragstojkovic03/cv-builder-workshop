@@ -3,7 +3,6 @@ import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 import EmploymentHistoryItem from '../components/EmploymentHistoryItem/EmploymentHistoryItem';
-import { v4 as uuidv4 } from 'uuid';
 import Modal from '../components/Modal/Modal';
 
 const ResumeBuilderPage = () => {
@@ -42,40 +41,18 @@ const ResumeBuilderPage = () => {
     );
   });
 
-  const [employmentHistory, setEmploymentHistory] = useState([
-    {
-      id: uuidv4(),
-      companyName: 'Google',
-      jobTitle: 'Developer',
-      startDate: 'jun 2016',
-      endDate: 'may 2020',
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-    {
-      id: uuidv4(),
-      companyName: 'Microsoft',
-      jobTitle: 'Developer',
-      startDate: 'jun 2016',
-      endDate: 'may 2020',
-
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-    {
-      id: uuidv4(),
-      companyName: 'Bing',
-      jobTitle: 'Developer',
-      startDate: 'jun 2016',
-      endDate: 'may 2020',
-
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-  ]);
+  const [employmentHistory, setEmploymentHistory] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const employmentHistorySaved = saved && JSON.parse(saved).employmentHistory;
+    return employmentHistorySaved.map((item) => {
+      return {
+        ...item,
+        content: function () {
+          return <EmploymentHistoryItem history={this} />;
+        },
+      };
+    });
+  });
 
   // useEffect(() => {
   //   setEmploymentHistory((employmentHistory) => {

@@ -2,6 +2,7 @@ import DragAndDropList from '../DragAndDropList/DragAndDropList';
 import { v4 as uuidv4 } from 'uuid';
 import EmploymentHistoryItem from '../EmploymentHistoryItem/EmploymentHistoryItem';
 import EmploymentHistoryForm from '../EmploymentHistoryForm/EmploymentHistoryForm';
+import { useEffect } from 'react';
 
 const EmploymentHistory = ({
   employmentHistory,
@@ -38,6 +39,18 @@ const EmploymentHistory = ({
       ),
     });
   };
+
+  useEffect(() => {
+    console.log(employmentHistory);
+    window.localStorage.setItem(
+      'FORM_DATA',
+      JSON.stringify({ employmentHistory })
+    );
+
+    console.log(
+      JSON.parse(window.localStorage.getItem('FORM_DATA')).employmentHistory
+    );
+  }, [employmentHistory]);
 
   return (
     <div className='employmentHistoryWrapper'>

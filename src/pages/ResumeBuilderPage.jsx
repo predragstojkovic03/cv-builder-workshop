@@ -44,6 +44,9 @@ const ResumeBuilderPage = () => {
   const [employmentHistory, setEmploymentHistory] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
     const employmentHistorySaved = saved && JSON.parse(saved).employmentHistory;
+
+    if (!employmentHistorySaved) return [];
+
     return employmentHistorySaved.map((item) => {
       return {
         ...item,

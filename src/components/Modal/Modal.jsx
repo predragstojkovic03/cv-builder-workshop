@@ -15,15 +15,7 @@ const Modal = ({ header, children, setModalState }) => {
           <h3>{header}</h3>
         </div>
         <div className='modalContent'>{children}</div>
-        <div className='modalFooter'>
-          <button
-            type='button'
-            className='btn btn-primary'
-            onClick={closeModal}
-          >
-            Close
-          </button>
-        </div>
+        <div className='modalFooter'></div>
       </div>
     </div>
   );

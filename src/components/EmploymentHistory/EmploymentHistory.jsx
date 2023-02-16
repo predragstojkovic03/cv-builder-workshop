@@ -32,6 +32,7 @@ const EmploymentHistory = ({
         <EmploymentHistoryForm
           employmentHistory={employmentHistory}
           setEmploymentHistory={setEmploymentHistory}
+          setModalState={setModalState}
           id={id}
         />
       ),

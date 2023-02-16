@@ -13,7 +13,6 @@ const SortableItem = (props) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
-    touchAction: 'none', // important for working on touch devices
   };
 
   const handleTouchStart = () => {
@@ -36,6 +35,7 @@ const SortableItem = (props) => {
               className='dragHandle'
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
+              style={{ touchAction: 'none' }} // important for working on touch devices
               ref={dragHandleRef}
               {...attributes}
               {...listeners}

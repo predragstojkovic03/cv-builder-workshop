@@ -16,11 +16,14 @@ const EditorSection = ({ heading, children }) => {
 
   return (
     <div className='editorSectionWrapper'>
-      <div className='flex justify-content-space-between align-items-center'>
+      <div
+        onClick={toggleColapse}
+        style={{ cursor: 'pointer' }}
+        className='flex justify-content-space-between align-items-center'
+      >
         <h2>{heading}</h2>
         <button
           type='button'
-          onClick={toggleColapse}
           className={`btn btn-transparent collapseEditorSectionBtn ${
             isOpen ? 'sectionOpen' : ''
           }`}

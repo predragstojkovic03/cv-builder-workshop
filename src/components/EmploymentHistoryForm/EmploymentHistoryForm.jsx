@@ -14,7 +14,7 @@ const EmploymentHistoryForm = ({
 }) => {
   const index = employmentHistory.findIndex((item) => item.id === id);
   const [employmentHistoryFormState, setEmploymentHistoryFormState] = useState(
-    (previousState) => {
+    () => {
       //employmentHistory[index]
 
       const saved = JSON.parse(window.localStorage.getItem('MODAL_FORM_DATA'));
@@ -57,7 +57,7 @@ const EmploymentHistoryForm = ({
       'MODAL_FORM_DATA',
       JSON.stringify({ employmentHistoryFormState, id })
     );
-  }, [employmentHistoryFormState]);
+  }, [employmentHistoryFormState, id]);
 
   return (
     <form>

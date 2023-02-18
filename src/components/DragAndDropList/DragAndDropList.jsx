@@ -15,8 +15,6 @@ const DragAndDropList = ({ items, setItems, removeItem, onEdit }) => {
 
     if (active.id !== over.id) {
       setItems((items) => {
-        console.log(active);
-        console.log(items);
         const activeIndex = items.findIndex((item) => item.id === active.id);
         const overIndex = items.findIndex((item) => item.id === over.id);
 

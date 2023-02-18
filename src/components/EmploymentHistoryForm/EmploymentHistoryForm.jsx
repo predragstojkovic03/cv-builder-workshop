@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Input from '../Input/Input';
 
 import './EmploymentHistoryForm.css';
+import TextArea from '../TextArea/TextArea';
+import { useEffect } from 'react';
 
 const EmploymentHistoryForm = ({
   employmentHistory,
@@ -11,10 +13,25 @@ const EmploymentHistoryForm = ({
   setModalState,
 }) => {
   const index = employmentHistory.findIndex((item) => item.id === id);
-  const [formState, setFormState] = useState(employmentHistory[index]);
+  const [employmentHistoryFormState, setEmploymentHistoryFormState] = useState(
+    (previousState) => {
+      //employmentHistory[index]
+
+      const saved = JSON.parse(window.localStorage.getItem('MODAL_FORM_DATA'));
+      const formStateSaved = saved && saved.employmentHistoryFormState;
+      const savedId = saved && saved.id;
+
+      if (!formStateSaved || !savedId) return employmentHistory[index];
+
+      if (id.toString() === savedId.toString())
+        return { ...formStateSaved, content: employmentHistory[index].content };
+
+      return employmentHistory[index];
+    }
+  );
 
   const onChangeHandler = (e) => {
-    setFormState((previousState) => {
+    setEmploymentHistoryFormState((previousState) => {
       return { ...previousState, [e.target.name]: [e.target.value] };
     });
   };
@@ -22,20 +39,25 @@ const EmploymentHistoryForm = ({
   const updateEmploymentHistory = () => {
     setEmploymentHistory((previousState) => {
       const newState = [...previousState];
-      newState[index] = formState;
+      newState[index] = employmentHistoryFormState;
+
+      window.localStorage.removeItem('MODAL_FORM_DATA');
 
       return newState;
     });
-
-    console.log('Before closing modal');
 
     if (setModalState !== undefined || setModalState !== null)
       setModalState((modalState) => {
         return { ...modalState, isOpen: false };
       });
-
-    console.log('After closing modal');
   };
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      'MODAL_FORM_DATA',
+      JSON.stringify({ employmentHistoryFormState, id })
+    );
+  }, [employmentHistoryFormState]);
 
   return (
     <form>
@@ -44,7 +66,7 @@ const EmploymentHistoryForm = ({
           labelText='Company Name'
           type='text'
           name='companyName'
-          value={formState.companyName}
+          value={employmentHistoryFormState.companyName}
           onChange={(e) => onChangeHandler(e)}
         />
 
@@ -52,7 +74,7 @@ const EmploymentHistoryForm = ({
           labelText='Job Title'
           type='text'
           name='jobTitle'
-          value={formState.jobTitle}
+          value={employmentHistoryFormState.jobTitle}
           onChange={(e) => onChangeHandler(e)}
         />
       </div>
@@ -61,7 +83,7 @@ const EmploymentHistoryForm = ({
           labelText='Start Date'
           type='text'
           name='startDate'
-          value={formState.startDate}
+          value={employmentHistoryFormState.startDate}
           onChange={(e) => onChangeHandler(e)}
         />
 
@@ -69,7 +91,16 @@ const EmploymentHistoryForm = ({
           labelText='End Date'
           type='text'
           name='endDate'
-          value={formState.endDate}
+          value={employmentHistoryFormState.endDate}
+          onChange={(e) => onChangeHandler(e)}
+        />
+      </div>
+      <div className='inputRow'>
+        <TextArea
+          height='110px'
+          resize='none'
+          name='description'
+          value={employmentHistoryFormState.description}
           onChange={(e) => onChangeHandler(e)}
         />
       </div>

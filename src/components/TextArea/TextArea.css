@@ -1,18 +1,13 @@
-.inputGroup {
-  width: 100%;
-}
-
-.inputGroup label {
+.textAreaGroup label {
   display: block;
   font-size: 14px;
   margin-bottom: 6px;
 }
 
-.inputGroup input {
+.textAreaGroup textarea {
   font-family: inherit;
   width: 100%;
   box-sizing: border-box;
-  height: 40px;
   padding-left: 8px;
   background: #eaeaea;
   border: 1px solid #eaeaea;
@@ -22,7 +17,7 @@
   transition: all 200ms ease;
 }
 
-.inputGroup input:focus {
+.textAreaGroup textarea:focus {
   box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.1);
   border: 2px solid #0070f3;
 }

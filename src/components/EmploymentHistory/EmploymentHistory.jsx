@@ -17,6 +17,7 @@ const EmploymentHistory = ({
       endDate: '',
       startDate: '',
       jobTitle: '',
+      description: '',
       id: uuidv4(),
       content: function () {
         return <EmploymentHistoryItem history={this} />;
@@ -41,14 +42,9 @@ const EmploymentHistory = ({
   };
 
   useEffect(() => {
-    console.log(employmentHistory);
     window.localStorage.setItem(
       'FORM_DATA',
       JSON.stringify({ employmentHistory })
-    );
-
-    console.log(
-      JSON.parse(window.localStorage.getItem('FORM_DATA')).employmentHistory
     );
   }, [employmentHistory]);
 

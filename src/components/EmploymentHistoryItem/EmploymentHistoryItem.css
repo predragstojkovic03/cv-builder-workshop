@@ -1,0 +1,19 @@
+.employmentHistoryItemDate {
+    font-size: 0.85rem;
+    color: #3b3b3b;
+    padding-bottom: 4px;
+}
+
+/* .employmentHistoryItemMain {
+    margin-top: 8px;
+} */
+
+.companyNameLabel{
+    font-weight: 600;
+}
+
+.jobTitleLabel {
+    padding-left: 4px;
+    font-size: 0.9rem;
+    color: #3b3b3b;
+}

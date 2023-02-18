@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import EditorSection from '../EditorSection/EditorSection';
 import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import './ResumeEditor.css';
@@ -9,6 +10,7 @@ const ResumeEditor = ({
   setPersonalDetails,
   employmentHistory,
   setEmploymentHistory,
+  setModalState,
 }) => {
   const navigate = useNavigate();
 
@@ -29,15 +31,20 @@ const ResumeEditor = ({
         </Button>
       </div>{' '}
       <form>
-        <PersonalDetails
-          personalDetails={personalDetails}
-          setPersonalDetails={setPersonalDetails}
-        />
-        <EmploymentHistory
-          removeEmploymentHistoryItem={removeEmploymentHistoryItem}
-          employmentHistory={employmentHistory}
-          setEmploymentHistory={setEmploymentHistory}
-        />
+        <EditorSection heading='Personal Details'>
+          <PersonalDetails
+            personalDetails={personalDetails}
+            setPersonalDetails={setPersonalDetails}
+          />
+        </EditorSection>
+        <EditorSection heading='Employment History'>
+          <EmploymentHistory
+            removeEmploymentHistoryItem={removeEmploymentHistoryItem}
+            employmentHistory={employmentHistory}
+            setEmploymentHistory={setEmploymentHistory}
+            setModalState={setModalState}
+          />
+        </EditorSection>
       </form>
     </div>
   );

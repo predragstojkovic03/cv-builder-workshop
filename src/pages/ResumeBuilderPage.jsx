@@ -3,13 +3,15 @@ import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 import EmploymentHistoryItem from '../components/EmploymentHistoryItem/EmploymentHistoryItem';
-import { v4 as uuidv4 } from 'uuid';
 import Modal from '../components/Modal/Modal';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
-  // eslint-disable-next-line
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    header: 'Heading',
+    component: <p>No component</p>,
+  });
 
   const toggleDocumentShow = (e) => {
     e.preventDefault();
@@ -39,34 +41,21 @@ const ResumeBuilderPage = () => {
     );
   });
 
-  const [employmentHistory, setEmploymentHistory] = useState([
-    {
-      id: uuidv4(),
-      companyName: 'Google',
-      firstName: 'Michael',
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-    {
-      id: uuidv4(),
-      companyName: 'Microsoft',
-      firstName: 'Michael',
+  const [employmentHistory, setEmploymentHistory] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const employmentHistorySaved = saved && JSON.parse(saved).employmentHistory;
 
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-    {
-      id: uuidv4(),
-      companyName: 'Bing',
-      firstName: 'Michael',
+    if (!employmentHistorySaved) return [];
 
-      content: function () {
-        return <EmploymentHistoryItem history={this} />;
-      },
-    },
-  ]);
+    return employmentHistorySaved.map((item) => {
+      return {
+        ...item,
+        content: function () {
+          return <EmploymentHistoryItem history={this} />;
+        },
+      };
+    });
+  });
 
   // useEffect(() => {
   //   setEmploymentHistory((employmentHistory) => {
@@ -85,6 +74,7 @@ const ResumeBuilderPage = () => {
         setPersonalDetails={setPersonalDetails}
         employmentHistory={employmentHistory}
         setEmploymentHistory={setEmploymentHistory}
+        setModalState={setModalState}
       />
       <ResumePreview
         personalDetails={personalDetails}
@@ -98,9 +88,10 @@ const ResumeBuilderPage = () => {
       >
         {previewActive ? 'Hide' : 'Preview'}
       </Button>
-      {modalOpen && (
-        <Modal>
-          <p>Modal content</p>
+
+      {modalState.isOpen && (
+        <Modal setModalState={setModalState} header={modalState.header}>
+          {modalState.component}
         </Modal>
       )}
     </div>

@@ -1,0 +1,24 @@
+.editorSectionContent {
+    overflow: hidden;
+
+    transition: all 350ms ease;
+}
+
+.editorSectionSeparator {
+    border-bottom: 0;
+    border-top: 1px solid #f2f2f2;
+}
+
+.collapseEditorSectionBtn {
+    padding: 14px !important;
+    font-size: 1.5rem;
+    transform: rotate(180deg);
+}
+
+.collapseEditorSectionBtn:hover {
+    color: #0070f3;
+}
+
+.collapseEditorSectionBtn.sectionOpen{
+    transform: rotate(0);
+}

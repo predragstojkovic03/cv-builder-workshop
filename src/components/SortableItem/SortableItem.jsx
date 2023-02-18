@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { RxDragHandleDots2 } from 'react-icons/rx';
-import { AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 import './SortableItem.css';
 
@@ -13,8 +13,17 @@ const SortableItem = (props) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
-    touchAction: 'none',
   };
+
+  const handleTouchStart = () => {
+    dragHandleRef.current.style.backgroundColor = '#f2f2f2';
+  };
+
+  const handleTouchEnd = () => {
+    dragHandleRef.current.style.backgroundColor = 'transparent';
+  };
+
+  const dragHandleRef = useRef();
 
   return (
     <div ref={setNodeRef} style={style}>
@@ -24,17 +33,28 @@ const SortableItem = (props) => {
             <button
               type='button'
               className='dragHandle'
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              style={{ touchAction: 'none' }} // important for working on touch devices
+              ref={dragHandleRef}
               {...attributes}
               {...listeners}
             >
               <RxDragHandleDots2 className='dragHandleIcon' />
             </button>
-            <div className='dndInfo'>{props.content()}</div>
+            <div className='dndInfo flex'>{props.content()}</div>
           </div>
           <div className='dndItemRight flex align-items-center'>
             <button
               type='button'
-              className='dndItemDeleteBtn'
+              className='dndBtn dndEditItemBtn'
+              onClick={() => props.onEdit(props.id)}
+            >
+              <AiOutlineEdit className='dndEditItemIcon' />
+            </button>
+            <button
+              type='button'
+              className='dndBtn dndItemDeleteBtn'
               onClick={() => props.removeItem(props.id)}
             >
               <AiOutlineDelete className='dndItemDeleteIcon' />

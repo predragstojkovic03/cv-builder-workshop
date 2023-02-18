@@ -2,7 +2,7 @@
     padding: 32px 24px;
     background: white;
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.1);   
+    border: 2px solid #f2f2f2;   
     margin-bottom: 16px;
     cursor: pointer;
 
@@ -12,19 +12,29 @@
 .dndItemWrapper:hover {
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
+    border: 2px solid #0070f3; 
 }
 
-.dndItemDeleteBtn {
+.dndBtn {
     all: unset;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-left: 8px;
+}
+
+.dndEditItemBtn:hover {
+    color: #0070f3;
+}
+
+.dndEditItemBtn:focus {
+    color: #0070f3;
 }
 
 .dndItemDeleteBtn:hover {
-    color: red;
+    color: #FF0800;
 }
 
 .dndItemDeleteBtn:focus {
-    color: red;
+    color: #FF0800;
 }
 
 .dragHandle {
@@ -40,8 +50,12 @@
 }
 
 .dragHandle:hover {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2 !important;
 }
+
+/* .dragHandle:focus {
+    background-color: #f2f2f2;
+} */
 
 .dragHandleIcon {
     font-size: 1rem;

@@ -20,6 +20,11 @@
     color: #fff;
 }
 
+.btn-transparent {
+  background: transparent;
+  border: none;
+}
+
 .btn-download-pdf {
     padding: 0;
     position: absolute;
@@ -58,6 +63,8 @@
     background: #0268dd;
     border: 1px solid #0268dd;
 }
+
+
 
 @media only screen and (min-width: 1201px) {
     .btn-resume-preview {

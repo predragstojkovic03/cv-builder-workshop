@@ -99,6 +99,7 @@ const EmploymentHistoryForm = ({
         <TextArea
           height='110px'
           resize='none'
+          labelText='Description'
           name='description'
           value={employmentHistoryFormState.description}
           onChange={(e) => onChangeHandler(e)}

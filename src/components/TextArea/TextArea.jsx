@@ -8,6 +8,7 @@ const TextArea = ({
   value,
   maxlength = '200',
   height = '200px',
+  width = '100%',
   resize = 'both',
 }) => {
   return (
@@ -17,7 +18,7 @@ const TextArea = ({
         type={type}
         name={name}
         value={value}
-        style={{ height: height, resize: resize }}
+        style={{ height: height, width: width, resize: resize }}
         maxLength={maxlength}
         onChange={(e) => onChange(e)}
       />

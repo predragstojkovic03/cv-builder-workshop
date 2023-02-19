@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Input from '../Input/Input';
 
 const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
   const updatedPersonalDetails = (e) => {
     setPersonalDetails({ ...personalDetails, [e.target.name]: e.target.value });
   };
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      'FORM_DATA',
-      JSON.stringify({ personalDetails })
-    );
-  }, [personalDetails]);
 
   return (
     <div className='personalDetailsWrapper'>

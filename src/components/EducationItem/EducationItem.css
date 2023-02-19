@@ -1,0 +1,19 @@
+.educationItemDate {
+  font-size: 0.85rem;
+  color: #3b3b3b;
+  padding-bottom: 4px;
+}
+
+/* .educationItemMain {
+  margin-top: 8px;
+} */
+
+.schoolLabel{
+  font-weight: 600;
+}
+
+.degreeLabel {
+  padding-left: 4px;
+  font-size: 0.9rem;
+  color: #3b3b3b;
+}

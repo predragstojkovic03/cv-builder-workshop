@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../components/Button/Button';
 import ResumeEditor from '../components/ResumeEditor/ResumeEditor';
 import ResumePreview from '../components/ResumePreview/ResumePreview';
 import EmploymentHistoryItem from '../components/EmploymentHistoryItem/EmploymentHistoryItem';
 import Modal from '../components/Modal/Modal';
+import EducationItem from '../components/EducationItem/EducationItem';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
@@ -25,20 +26,21 @@ const ResumeBuilderPage = () => {
   const [personalDetails, setPersonalDetails] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
     const personalDetailsSaved = saved && JSON.parse(saved).personalDetails;
-    return (
-      personalDetailsSaved || {
-        wantedJobTitle: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        country: '',
-        city: '',
-        dateOfBirth: '',
-        address: '',
-        imageUrl: '',
-      }
-    );
+
+    if (personalDetailsSaved) return personalDetailsSaved;
+
+    return {
+      wantedJobTitle: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      country: '',
+      city: '',
+      dateOfBirth: '',
+      address: '',
+      imageUrl: '',
+    };
   });
 
   const [employmentHistory, setEmploymentHistory] = useState(() => {
@@ -57,6 +59,29 @@ const ResumeBuilderPage = () => {
     });
   });
 
+  const [education, setEducation] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const educationSaved = saved && JSON.parse(saved).education;
+
+    if (!educationSaved) return [];
+
+    return educationSaved.map((item) => {
+      return {
+        ...item,
+        content: function () {
+          return <EducationItem education={this} />;
+        },
+      };
+    });
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      'FORM_DATA',
+      JSON.stringify({ personalDetails, employmentHistory, education })
+    );
+  }, [personalDetails, employmentHistory, education]);
+
   // useEffect(() => {
   //   setEmploymentHistory((employmentHistory) => {
   //     return employmentHistory.map((item) => {
@@ -74,6 +99,8 @@ const ResumeBuilderPage = () => {
         setPersonalDetails={setPersonalDetails}
         employmentHistory={employmentHistory}
         setEmploymentHistory={setEmploymentHistory}
+        education={education}
+        setEducation={setEducation}
         setModalState={setModalState}
       />
       <ResumePreview

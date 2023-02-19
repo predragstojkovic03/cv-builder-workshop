@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import DescribeYourself from '../DescribeYourself/DescribeYourself';
 import EditorSection from '../EditorSection/EditorSection';
+import Education from '../Education/Education';
 import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import './ResumeEditor.css';
@@ -10,6 +12,8 @@ const ResumeEditor = ({
   setPersonalDetails,
   employmentHistory,
   setEmploymentHistory,
+  education,
+  setEducation,
   setModalState,
 }) => {
   const navigate = useNavigate();
@@ -23,7 +27,7 @@ const ResumeEditor = ({
   };
 
   return (
-    <div className={`resumeEditorWrapper`}>
+    <div className='resumeEditorWrapper'>
       <div className='resumeEditorHeading'>
         Create your Resume{' '}
         <Button styleClasses='btn btn-primary' onClick={() => navigate('/')}>
@@ -37,11 +41,21 @@ const ResumeEditor = ({
             setPersonalDetails={setPersonalDetails}
           />
         </EditorSection>
+        <EditorSection heading='Describe yourself'>
+          <DescribeYourself />
+        </EditorSection>
         <EditorSection heading='Employment History'>
           <EmploymentHistory
             removeEmploymentHistoryItem={removeEmploymentHistoryItem}
             employmentHistory={employmentHistory}
             setEmploymentHistory={setEmploymentHistory}
+            setModalState={setModalState}
+          />
+        </EditorSection>
+        <EditorSection heading='Education'>
+          <Education
+            education={education}
+            setEducation={setEducation}
             setModalState={setModalState}
           />
         </EditorSection>

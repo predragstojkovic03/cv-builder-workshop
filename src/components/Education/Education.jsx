@@ -1,38 +1,40 @@
+import React from 'react';
 import DragAndDropList from '../DragAndDropList/DragAndDropList';
+import EducationItem from '../EducationItem/EducationItem';
+import EducationForm from '../EducationForm/EducationForm';
 import { v4 as uuidv4 } from 'uuid';
-import EmploymentHistoryItem from '../EmploymentHistoryItem/EmploymentHistoryItem';
-import EmploymentHistoryForm from '../EmploymentHistoryForm/EmploymentHistoryForm';
 
-const EmploymentHistory = ({
-  employmentHistory,
-  setEmploymentHistory,
-  removeEmploymentHistoryItem,
-  setModalState,
-}) => {
+const Education = ({ education, setEducation, setModalState }) => {
   const addItem = (e) => {
     e.preventDefault();
     const newItem = {
-      companyName: 'Company name',
+      school: 'School name',
       endDate: '',
       startDate: '',
-      jobTitle: '',
+      degree: '',
       description: '',
       id: uuidv4(),
       content: function () {
-        return <EmploymentHistoryItem history={this} />;
+        return <EducationItem education={this} />;
       },
     };
-    setEmploymentHistory([...employmentHistory, newItem]);
+    setEducation([...education, newItem]);
+  };
+
+  const removeEducationItem = (id) => {
+    const updatedData = education.filter((item) => item.id !== id);
+
+    setEducation(updatedData);
   };
 
   const openModalToEdit = (id) => {
     setModalState({
       isOpen: true,
-      header: 'Edit employment history entry',
+      header: 'Edit education entry',
       component: (
-        <EmploymentHistoryForm
-          employmentHistory={employmentHistory}
-          setEmploymentHistory={setEmploymentHistory}
+        <EducationForm
+          education={education}
+          setEducation={setEducation}
           setModalState={setModalState}
           id={id}
         />
@@ -43,9 +45,9 @@ const EmploymentHistory = ({
   return (
     <div className='employmentHistoryWrapper'>
       <DragAndDropList
-        items={employmentHistory}
-        setItems={setEmploymentHistory}
-        removeItem={removeEmploymentHistoryItem}
+        items={education}
+        setItems={setEducation}
+        removeItem={removeEducationItem}
         onEdit={openModalToEdit}
       />
       <div className='flex fullWidth justify-content-center'>
@@ -61,4 +63,4 @@ const EmploymentHistory = ({
   );
 };
 
-export default EmploymentHistory;
+export default Education;

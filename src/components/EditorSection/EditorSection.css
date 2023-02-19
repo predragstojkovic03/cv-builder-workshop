@@ -22,3 +22,19 @@
 .collapseEditorSectionBtn.sectionOpen{
     transform: rotate(0);
 }
+
+.editorSectionInfo {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: #646464;
+}
+
+.editorSectionHeading h2 {
+    margin: 0;
+}
+
+.editorSectionHeading {
+    margin-bottom: 16px;
+}

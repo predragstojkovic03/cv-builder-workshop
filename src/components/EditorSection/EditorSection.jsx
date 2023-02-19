@@ -3,7 +3,7 @@ import { RiArrowUpSLine } from 'react-icons/ri';
 
 import './EditorSection.css';
 
-const EditorSection = ({ heading, children }) => {
+const EditorSection = ({ heading, infoText, children }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleColapse = () => {
@@ -36,6 +36,7 @@ const EditorSection = ({ heading, children }) => {
         ref={editorSectionContentRef}
         style={isOpen ? { height: 'fit-content' } : { height: '0px' }}
       >
+        {infoText && <p className='editorSectionInfo'>{infoText}</p>}
         {children}
       </div>
       <hr className='editorSectionSeparator' />

@@ -44,7 +44,10 @@ const ResumeEditor = ({
           />
         </EditorSection>
 
-        <EditorSection heading='Describe yourself'>
+        <EditorSection
+          heading='Describe yourself'
+          infoText='In short terms, describe your profile as best and as enthusiastic you can.'
+        >
           <DescribeYourself
             describeYourself={describeYourself}
             setDescribeYourself={setDescribeYourself}

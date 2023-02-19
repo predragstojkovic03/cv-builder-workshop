@@ -5,6 +5,7 @@
 }
 
 .textAreaGroup textarea {
+  font-size: 1rem;
   font-family: inherit;
   box-sizing: border-box;
   padding-left: 8px;

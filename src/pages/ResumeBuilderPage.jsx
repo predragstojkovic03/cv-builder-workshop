@@ -8,20 +8,17 @@ import EducationItem from '../components/EducationItem/EducationItem';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
-  const [modalState, setModalState] = useState({
-    isOpen: false,
-    header: 'Heading',
-    component: <p>No component</p>,
-  });
 
   const toggleDocumentShow = (e) => {
     e.preventDefault();
     setPreviewActive(!previewActive);
   };
 
-  // useEffect(() => {
-  //   setIsDocumentBtnToggled(true);
-  // }, []);
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    header: 'Heading',
+    component: <p>No component</p>,
+  });
 
   const [personalDetails, setPersonalDetails] = useState(() => {
     const saved = window.localStorage.getItem('FORM_DATA');
@@ -75,22 +72,25 @@ const ResumeBuilderPage = () => {
     });
   });
 
+  const [describeYourself, setDescribeYourself] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const describeYourselfSaved = saved && JSON.parse(saved).describeYourself;
+
+    if (!describeYourselfSaved) return '';
+
+    return describeYourselfSaved;
+  });
   useEffect(() => {
     window.localStorage.setItem(
       'FORM_DATA',
-      JSON.stringify({ personalDetails, employmentHistory, education })
+      JSON.stringify({
+        personalDetails,
+        employmentHistory,
+        education,
+        describeYourself,
+      })
     );
-  }, [personalDetails, employmentHistory, education]);
-
-  // useEffect(() => {
-  //   setEmploymentHistory((employmentHistory) => {
-  //     return employmentHistory.map((item) => {
-  //       return { ...item, contentToDisplay: { text: item.companyName } };
-  //     });
-  //   });
-  // }, [employmentHistory, setEmploymentHistory]);
-
-  // console.log(personalDetails);
+  }, [personalDetails, employmentHistory, education, describeYourself]);
 
   return (
     <div className='flex full-width position-relative'>
@@ -102,6 +102,8 @@ const ResumeBuilderPage = () => {
         education={education}
         setEducation={setEducation}
         setModalState={setModalState}
+        describeYourself={describeYourself}
+        setDescribeYourself={setDescribeYourself}
       />
       <ResumePreview
         personalDetails={personalDetails}

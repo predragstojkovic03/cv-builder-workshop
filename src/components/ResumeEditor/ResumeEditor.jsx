@@ -15,6 +15,8 @@ const ResumeEditor = ({
   education,
   setEducation,
   setModalState,
+  describeYourself,
+  setDescribeYourself,
 }) => {
   const navigate = useNavigate();
 
@@ -41,9 +43,14 @@ const ResumeEditor = ({
             setPersonalDetails={setPersonalDetails}
           />
         </EditorSection>
+
         <EditorSection heading='Describe yourself'>
-          <DescribeYourself />
+          <DescribeYourself
+            describeYourself={describeYourself}
+            setDescribeYourself={setDescribeYourself}
+          />
         </EditorSection>
+
         <EditorSection heading='Employment History'>
           <EmploymentHistory
             removeEmploymentHistoryItem={removeEmploymentHistoryItem}
@@ -52,6 +59,7 @@ const ResumeEditor = ({
             setModalState={setModalState}
           />
         </EditorSection>
+
         <EditorSection heading='Education'>
           <Education
             education={education}

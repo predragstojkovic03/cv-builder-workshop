@@ -7,7 +7,14 @@ import './ResumePreview.css';
 import { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 
-const ResumePreview = ({ personalDetails, previewActive }) => {
+const ResumePreview = ({
+  personalDetails,
+  previewActive,
+  employmentHistory,
+  education,
+  describeYourself,
+  skills,
+}) => {
   const [showDonwloadOverlay, setShowDonwloadOverlay] = useState(false);
   const themeColors = [
     'theme-red',
@@ -65,6 +72,10 @@ const ResumePreview = ({ personalDetails, previewActive }) => {
         <ResumeDocumentJsx
           innerRef={resumeToPrintRef}
           personalDetails={personalDetails}
+          employmentHistory={employmentHistory}
+          education={education}
+          describeYourself={describeYourself}
+          skills={skills}
           selectedThemeColor={selectedThemeColor}
         />
       </div>

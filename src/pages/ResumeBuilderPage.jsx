@@ -106,9 +106,10 @@ const ResumeBuilderPage = () => {
         employmentHistory,
         education,
         describeYourself,
+        skills,
       })
     );
-  }, [personalDetails, employmentHistory, education, describeYourself]);
+  }, [personalDetails, employmentHistory, education, describeYourself, skills]);
 
   return (
     <div className='flex full-width position-relative'>
@@ -122,12 +123,16 @@ const ResumeBuilderPage = () => {
         setModalState={setModalState}
         describeYourself={describeYourself}
         setDescribeYourself={setDescribeYourself}
+        skills={skills}
+        setSkills={setSkills}
       />
       <ResumePreview
         personalDetails={personalDetails}
         previewActive={previewActive}
         employmentHistory={employmentHistory}
-        setEmploymentHistory={setEmploymentHistory}
+        education={education}
+        describeYourself={describeYourself}
+        skills={skills}
       />
       <Button
         onClick={(e) => toggleDocumentShow(e)}

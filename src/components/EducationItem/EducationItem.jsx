@@ -10,7 +10,7 @@ const EducationItem = ({ education }) => {
       )}
       <div className='educationItemMain'>
         <span className='schoolLabel'>{education.item.school}</span>
-        {education.item.jobTitle && (
+        {education.item.degree && (
           <span className='degreeLabel'>{' @ ' + education.item.degree}</span>
         )}
       </div>

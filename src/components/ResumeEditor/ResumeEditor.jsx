@@ -5,6 +5,7 @@ import EditorSection from '../EditorSection/EditorSection';
 import Education from '../Education/Education';
 import EmploymentHistory from '../EmploymentHistory/EmploymentHistory';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
+import Skills from '../Skills/Skills';
 import './ResumeEditor.css';
 
 const ResumeEditor = ({
@@ -17,6 +18,8 @@ const ResumeEditor = ({
   setModalState,
   describeYourself,
   setDescribeYourself,
+  skills,
+  setSkills,
 }) => {
   const navigate = useNavigate();
 
@@ -67,6 +70,13 @@ const ResumeEditor = ({
           <Education
             education={education}
             setEducation={setEducation}
+            setModalState={setModalState}
+          />
+        </EditorSection>
+        <EditorSection heading='Skills'>
+          <Skills
+            skills={skills}
+            setSkills={setSkills}
             setModalState={setModalState}
           />
         </EditorSection>

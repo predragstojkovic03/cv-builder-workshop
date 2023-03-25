@@ -5,6 +5,7 @@ import ResumePreview from '../components/ResumePreview/ResumePreview';
 import EmploymentHistoryItem from '../components/EmploymentHistoryItem/EmploymentHistoryItem';
 import Modal from '../components/Modal/Modal';
 import EducationItem from '../components/EducationItem/EducationItem';
+import SkillItem from '../components/SkillItem/SkillItem';
 
 const ResumeBuilderPage = () => {
   const [previewActive, setPreviewActive] = useState(false);
@@ -80,6 +81,23 @@ const ResumeBuilderPage = () => {
 
     return describeYourselfSaved;
   });
+
+  const [skills, setSkills] = useState(() => {
+    const saved = window.localStorage.getItem('FORM_DATA');
+    const skillsSaved = saved && JSON.parse(saved).skills;
+
+    if (!skillsSaved) return [];
+
+    return skillsSaved.map((item) => {
+      return {
+        ...item,
+        content: function () {
+          return <SkillItem skill={this} />;
+        },
+      };
+    });
+  });
+
   useEffect(() => {
     window.localStorage.setItem(
       'FORM_DATA',
@@ -88,9 +106,10 @@ const ResumeBuilderPage = () => {
         employmentHistory,
         education,
         describeYourself,
+        skills,
       })
     );
-  }, [personalDetails, employmentHistory, education, describeYourself]);
+  }, [personalDetails, employmentHistory, education, describeYourself, skills]);
 
   return (
     <div className='flex full-width position-relative'>
@@ -104,12 +123,16 @@ const ResumeBuilderPage = () => {
         setModalState={setModalState}
         describeYourself={describeYourself}
         setDescribeYourself={setDescribeYourself}
+        skills={skills}
+        setSkills={setSkills}
       />
       <ResumePreview
         personalDetails={personalDetails}
         previewActive={previewActive}
         employmentHistory={employmentHistory}
-        setEmploymentHistory={setEmploymentHistory}
+        education={education}
+        describeYourself={describeYourself}
+        skills={skills}
       />
       <Button
         onClick={(e) => toggleDocumentShow(e)}

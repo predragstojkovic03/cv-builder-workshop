@@ -99,43 +99,55 @@ const ResumeDocumentJsx = ({
         </div>
       </div>
       <div className='mainContent'>
-        <h2>Education</h2>
-        <ul>
-          {education.map((item) => (
-            <li>
-              <div className='listItemHeading'>
-                {item.school} - {item.startDate} to {item.endDate}
-              </div>
-              <div className='listItemSubheading'>{item.degree}</div>
-              <div className='listItemDescription'>{item.description}</div>
-            </li>
-          ))}
-        </ul>
+        {education && education.length > 0 && (
+          <>
+            <h2>Education</h2>
+            <ul>
+              {education.map((item) => (
+                <li>
+                  <div className='listItemHeading'>
+                    {item.school} - {item.startDate} to {item.endDate}
+                  </div>
+                  <div className='listItemSubheading'>{item.degree}</div>
+                  <div className='listItemDescription'>{item.description}</div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h2>Employment history</h2>
-        <ul>
-          {employmentHistory.map((item) => (
-            <li>
-              <div className='listItemHeading'>
-                {item.companyName} - {item.startDate} to {item.endDate}
-              </div>
-              <div className='listItemSubheading'>{item.jobTitle}</div>
-              <div className='listItemDescription'>{item.description}</div>
-            </li>
-          ))}
-        </ul>
+        {employmentHistory && employmentHistory.length > 0 && (
+          <>
+            <h2>Employment history</h2>
+            <ul>
+              {employmentHistory.map((item) => (
+                <li>
+                  <div className='listItemHeading'>
+                    {item.companyName} - {item.startDate} to {item.endDate}
+                  </div>
+                  <div className='listItemSubheading'>{item.jobTitle}</div>
+                  <div className='listItemDescription'>{item.description}</div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h2>Skills</h2>
-        <ul>
-          {skills.map((item) => (
-            <li>
-              <div className='listItemHeading'>{item.name}</div>
-              <div className='listItemSubheading'>
-                {item.doesWantDisplay && levelText(item.level)}
-              </div>
-            </li>
-          ))}
-        </ul>
+        {skills && skills.length > 0 && (
+          <>
+            <h2>Skills</h2>
+            <ul>
+              {skills.map((item) => (
+                <li>
+                  <div className='listItemHeading'>{item.name}</div>
+                  <div className='listItemSubheading'>
+                    {item.doesWantDisplay && levelText(item.level)}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );

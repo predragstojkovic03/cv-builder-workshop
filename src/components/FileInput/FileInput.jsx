@@ -2,7 +2,7 @@ import Button from '../Button/Button';
 
 import './FileInput.css';
 
-const FileInput = ({ labelText, btnText = 'Upload', name, onChange }) => {
+const FileInput = ({ labelText, btnText = 'Izaberi', name, onChange }) => {
   return (
     <div className='inputGroup'>
       <label>{labelText}</label>

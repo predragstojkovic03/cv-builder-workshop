@@ -106,7 +106,7 @@ const ResumeDocumentJsx = ({
               {education.map((item) => (
                 <li>
                   <div className='listItemHeading'>
-                    {item.school} - {item.startDate} to {item.endDate}
+                    {item.school} - {item.startDate} do {item.endDate}
                   </div>
                   <div className='listItemSubheading'>{item.degree}</div>
                   <div className='listItemDescription'>{item.description}</div>
@@ -123,7 +123,7 @@ const ResumeDocumentJsx = ({
               {employmentHistory.map((item) => (
                 <li>
                   <div className='listItemHeading'>
-                    {item.companyName} - {item.startDate} to {item.endDate}
+                    {item.companyName} - {item.startDate} do {item.endDate}
                   </div>
                   <div className='listItemSubheading'>{item.jobTitle}</div>
                   <div className='listItemDescription'>{item.description}</div>

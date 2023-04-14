@@ -8,6 +8,14 @@
     cursor: pointer;
 }
 
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .btn-circle {
     border-radius: 50%;
     width: 80px;

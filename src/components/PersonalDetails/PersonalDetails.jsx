@@ -1,8 +1,15 @@
 import React from 'react';
 import Input from '../Input/Input';
+import FileInput from '../FileInput/FileInput';
 
 const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
   const updatedPersonalDetails = (e) => {
+    if (e.target.name === 'imageUrl')
+      return setPersonalDetails({
+        ...personalDetails,
+        imageUrl: URL.createObjectURL(e.target.files[0]),
+      });
+
     setPersonalDetails({ ...personalDetails, [e.target.name]: e.target.value });
   };
 
@@ -17,11 +24,10 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
           onChange={updatedPersonalDetails}
         />
 
-        <Input
+        <FileInput
           labelText='Profilna slika'
           type='text'
           name='imageUrl'
-          value={personalDetails.imageUrl}
           onChange={updatedPersonalDetails}
         />
       </div>

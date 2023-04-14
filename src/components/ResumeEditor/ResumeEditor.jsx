@@ -34,13 +34,13 @@ const ResumeEditor = ({
   return (
     <div className='resumeEditorWrapper'>
       <div className='resumeEditorHeading'>
-        Create your Resume{' '}
+        Kreiraj svoj CV{' '}
         <Button styleClasses='btn btn-primary' onClick={() => navigate('/')}>
-          Back to homepage
+          Nazad na početnu
         </Button>
       </div>{' '}
       <form>
-        <EditorSection heading='Personal Details'>
+        <EditorSection heading='Lične informacije'>
           <PersonalDetails
             personalDetails={personalDetails}
             setPersonalDetails={setPersonalDetails}
@@ -48,8 +48,8 @@ const ResumeEditor = ({
         </EditorSection>
 
         <EditorSection
-          heading='Describe yourself'
-          infoText='In short terms, describe your profile as best and as enthusiastic as you can.'
+          heading='Opiši sebe'
+          infoText='U kratkim crtama, opiši svoj profil što bolje i sa što više entuzijazma.'
         >
           <DescribeYourself
             describeYourself={describeYourself}
@@ -57,7 +57,7 @@ const ResumeEditor = ({
           />
         </EditorSection>
 
-        <EditorSection heading='Employment History'>
+        <EditorSection heading='Radno iskustvo'>
           <EmploymentHistory
             removeEmploymentHistoryItem={removeEmploymentHistoryItem}
             employmentHistory={employmentHistory}
@@ -66,14 +66,14 @@ const ResumeEditor = ({
           />
         </EditorSection>
 
-        <EditorSection heading='Education'>
+        <EditorSection heading='Obrazovanje'>
           <Education
             education={education}
             setEducation={setEducation}
             setModalState={setModalState}
           />
         </EditorSection>
-        <EditorSection heading='Skills'>
+        <EditorSection heading='Veštine'>
           <Skills
             skills={skills}
             setSkills={setSkills}

@@ -1,5 +1,5 @@
 .resumeEditorWrapper {
-  background: #fff;
+  background: var(--main-bg-color);
   width: 50%;
   padding: 40px 32px;
   box-sizing: border-box;

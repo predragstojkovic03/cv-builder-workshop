@@ -34,13 +34,13 @@ const ResumeDocumentJsx = ({
   const levelText = (level) => {
     switch (Number(level)) {
       case 1:
-        return 'Beginner';
+        return 'Početnik';
 
       case 2:
-        return 'Intermediate';
+        return 'Srednji nivo';
 
       case 3:
-        return 'Expert';
+        return 'Ekspert';
 
       default:
         return '';
@@ -63,7 +63,7 @@ const ResumeDocumentJsx = ({
           )}
           {describeYourself && (
             <div className='describeYourself'>
-              <h3>About me</h3>
+              <h3>O meni</h3>
               <p>{describeYourself}</p>
             </div>
           )}
@@ -101,7 +101,7 @@ const ResumeDocumentJsx = ({
       <div className='mainContent'>
         {education && education.length > 0 && (
           <>
-            <h2>Education</h2>
+            <h2>Obrazovanje</h2>
             <ul>
               {education.map((item) => (
                 <li>
@@ -118,7 +118,7 @@ const ResumeDocumentJsx = ({
 
         {employmentHistory && employmentHistory.length > 0 && (
           <>
-            <h2>Employment history</h2>
+            <h2>Radno iskustvo</h2>
             <ul>
               {employmentHistory.map((item) => (
                 <li>
@@ -135,7 +135,7 @@ const ResumeDocumentJsx = ({
 
         {skills && skills.length > 0 && (
           <>
-            <h2>Skills</h2>
+            <h2>Veštine</h2>
             <ul>
               {skills.map((item) => (
                 <li>

@@ -10,6 +10,8 @@
   background: white;
   overflow: hidden;
   font-size: 11pt;
+  color: black !important;
+  word-wrap: break-word;
 }
 
 .aside {
@@ -164,4 +166,9 @@ h3 {
 
 .listItemSubheading {
   font-style: italic;
+}
+
+.listItemDescription {
+  word-wrap: break-word;
+  word-break: break-all;
 }

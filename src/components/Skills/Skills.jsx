@@ -8,7 +8,7 @@ const Skills = ({ skills, setSkills, setModalState }) => {
   const addItem = (e) => {
     e.preventDefault();
     const newItem = {
-      name: 'Skill name',
+      name: 'Veština',
       level: 2,
       doesWantDisplay: false,
       id: uuidv4(),

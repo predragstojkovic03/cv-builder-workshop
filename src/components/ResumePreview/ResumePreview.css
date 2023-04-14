@@ -17,7 +17,7 @@
   left: 50%;
   width: 50%;
   height: 100vh;
-  background: #656e83;
+  background: var(--main-bg-color-900);
 }
 
 .resumePreviewWrapper {
@@ -131,7 +131,7 @@
   left: 96%;
   top: 50%;
   transform: translate(-96%, -50%);
-  background: #4f586b;
+  background: var(--main-bg-color-800);
   padding: 12px 8px;
   border-radius: 4px;
   display: flex;

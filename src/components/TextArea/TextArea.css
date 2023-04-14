@@ -6,11 +6,12 @@
 
 .textAreaGroup textarea {
   font-size: 1rem;
+  color: var(--main-text-color);
   font-family: inherit;
   box-sizing: border-box;
   padding-left: 8px;
-  background: #eaeaea;
-  border: 1px solid #eaeaea;
+  background: var(--main-bg-color-lighter);
+  border: 1px solid var(--dark-accent-color);
   box-shadow: none;
   border-radius: 3px;
   outline: none;

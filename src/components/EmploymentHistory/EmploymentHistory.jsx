@@ -12,7 +12,7 @@ const EmploymentHistory = ({
   const addItem = (e) => {
     e.preventDefault();
     const newItem = {
-      companyName: 'Company name',
+      companyName: 'Naziv kompanije',
       endDate: '',
       startDate: '',
       jobTitle: '',
@@ -28,7 +28,7 @@ const EmploymentHistory = ({
   const openModalToEdit = (id) => {
     setModalState({
       isOpen: true,
-      header: 'Edit employment history entry',
+      header: 'Izmenite podatke o zaposlenju',
       component: (
         <EmploymentHistoryForm
           employmentHistory={employmentHistory}

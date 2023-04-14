@@ -10,7 +10,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
     <div className='personalDetailsWrapper'>
       <div className='inputRow'>
         <Input
-          labelText='Wanted Job Title'
+          labelText='Željeno radno mesto'
           type='text'
           name='wantedJobTitle'
           value={personalDetails.wantedJobTitle}
@@ -18,7 +18,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
         />
 
         <Input
-          labelText='Profile Picture'
+          labelText='Profilna slika'
           type='text'
           name='imageUrl'
           value={personalDetails.imageUrl}
@@ -27,7 +27,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
       </div>
       <div className='inputRow'>
         <Input
-          labelText='First Name'
+          labelText='Ime'
           type='text'
           name='firstName'
           value={personalDetails.firstName}
@@ -35,7 +35,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
         />
 
         <Input
-          labelText='Last Name'
+          labelText='Prezime'
           type='text'
           name='lastName'
           value={personalDetails.lastName}
@@ -44,7 +44,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
       </div>
       <div className='inputRow'>
         <Input
-          labelText='Email'
+          labelText='Mejl'
           type='text'
           name='email'
           value={personalDetails.email}
@@ -52,7 +52,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
         />
 
         <Input
-          labelText='Phone'
+          labelText='Telefon'
           type='text'
           name='phone'
           value={personalDetails.phone}
@@ -61,7 +61,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
       </div>
       <div className='inputRow'>
         <Input
-          labelText='Country'
+          labelText='Država'
           type='text'
           name='country'
           value={personalDetails.country}
@@ -69,7 +69,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
         />
 
         <Input
-          labelText='City'
+          labelText='Grad'
           type='text'
           name='city'
           value={personalDetails.city}
@@ -78,7 +78,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
       </div>
       <div className='inputRow'>
         <Input
-          labelText='Address'
+          labelText='Adresa'
           type='text'
           name='address'
           value={personalDetails.address}
@@ -86,7 +86,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
         />
 
         <Input
-          labelText='Date of Birth'
+          labelText='Datum rođenja'
           type='text'
           name='dateOfBirth'
           value={personalDetails.dateOfBirth}

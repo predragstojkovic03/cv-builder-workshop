@@ -63,7 +63,7 @@ const EmploymentHistoryForm = ({
     <form>
       <div className='inputRow'>
         <Input
-          labelText='Company Name'
+          labelText='Naziv kompanije'
           type='text'
           name='companyName'
           value={employmentHistoryFormState.companyName}
@@ -71,7 +71,7 @@ const EmploymentHistoryForm = ({
         />
 
         <Input
-          labelText='Job Title'
+          labelText='Radno mesto'
           type='text'
           name='jobTitle'
           value={employmentHistoryFormState.jobTitle}
@@ -80,7 +80,7 @@ const EmploymentHistoryForm = ({
       </div>
       <div className='inputRow'>
         <Input
-          labelText='Start Date'
+          labelText='Datum početka'
           type='text'
           name='startDate'
           value={employmentHistoryFormState.startDate}
@@ -88,7 +88,7 @@ const EmploymentHistoryForm = ({
         />
 
         <Input
-          labelText='End Date'
+          labelText='Datum završetka'
           type='text'
           name='endDate'
           value={employmentHistoryFormState.endDate}
@@ -99,7 +99,7 @@ const EmploymentHistoryForm = ({
         <TextArea
           height='110px'
           resize='none'
-          labelText='Description'
+          labelText='Opis'
           name='description'
           value={employmentHistoryFormState.description}
           onChange={(e) => onChangeHandler(e)}

@@ -8,7 +8,7 @@ const Education = ({ education, setEducation, setModalState }) => {
   const addItem = (e) => {
     e.preventDefault();
     const newItem = {
-      school: 'School name',
+      school: 'Škola/Fakultet',
       endDate: '',
       startDate: '',
       degree: '',
@@ -30,7 +30,7 @@ const Education = ({ education, setEducation, setModalState }) => {
   const openModalToEdit = (id) => {
     setModalState({
       isOpen: true,
-      header: 'Edit education entry',
+      header: 'Izmenite podatke o obrazovanju',
       component: (
         <EducationForm
           education={education}

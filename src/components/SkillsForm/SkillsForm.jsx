@@ -69,15 +69,15 @@ const SkillsForm = ({ skills, setSkills, id, setModalState }) => {
   const marks = [
     {
       value: 1,
-      label: 'beginner',
+      label: 'početnik',
     },
     {
       value: 2,
-      label: 'intermediate',
+      label: 'srednji',
     },
     {
       value: 3,
-      label: 'expert',
+      label: 'ekspert',
     },
   ];
 
@@ -89,7 +89,7 @@ const SkillsForm = ({ skills, setSkills, id, setModalState }) => {
     <form>
       <div className='inputRow'>
         <Input
-          labelText='Skill name'
+          labelText='Veština'
           type='text'
           name='name'
           value={skillsFormState.name}
@@ -107,7 +107,7 @@ const SkillsForm = ({ skills, setSkills, id, setModalState }) => {
       </div>
       <div className='inputRow'>
         <Slider
-          aria-label='Level'
+          aria-label='Nivo'
           name='level'
           defaultValue={2}
           getAriaValueText={valuetext}

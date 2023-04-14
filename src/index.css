@@ -4,6 +4,21 @@ body {
   font-family: 'Mulish', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+:root {
+  --accent-color: #FD6A02;
+  --accent-darker: #e96304;
+  --main-bg-color: #121212;
+  --dark-accent-color: #181818;
+  --main-bg-color-lighter: #222222;
+  --main-bg-color-900: #424242;
+  --main-bg-color-800: #616161;
+  --white-color: #e8eef2;
+
+  --main-text-color: #eeeeee;
 }
 
 a {

@@ -9,6 +9,15 @@
 .heroContent {
   width: 800px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepageLogo {
+  width: 320px;
+  margin-bottom: 24px;
 }
 
 .heroHeading {
@@ -20,9 +29,13 @@
   .heroHeading {
     font-size: 42px;
   }
+
+  .homepageLogo {
+    width: 200px;
+  }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 370px) {
   .heroHeading {
     font-size: 34px;
   }

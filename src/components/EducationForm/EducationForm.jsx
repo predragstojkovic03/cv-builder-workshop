@@ -66,7 +66,7 @@ const EducationForm = ({ education, setEducation, id, setModalState }) => {
     <form>
       <div className='inputRow'>
         <Input
-          labelText='School'
+          labelText='Škola/Fakultet'
           type='text'
           name='school'
           value={educationFormState.school}
@@ -74,7 +74,7 @@ const EducationForm = ({ education, setEducation, id, setModalState }) => {
         />
 
         <Input
-          labelText='Degree'
+          labelText='Zvanje'
           type='text'
           name='degree'
           value={educationFormState.degree}
@@ -83,7 +83,7 @@ const EducationForm = ({ education, setEducation, id, setModalState }) => {
       </div>
       <div className='inputRow'>
         <Input
-          labelText='Start Date'
+          labelText='Datum početka'
           type='text'
           name='startDate'
           value={educationFormState.startDate}
@@ -91,7 +91,7 @@ const EducationForm = ({ education, setEducation, id, setModalState }) => {
         />
 
         <Input
-          labelText='End Date'
+          labelText='Datum završetka'
           type='text'
           name='endDate'
           value={educationFormState.endDate}
@@ -102,7 +102,7 @@ const EducationForm = ({ education, setEducation, id, setModalState }) => {
         <TextArea
           height='110px'
           resize='none'
-          labelText='Description'
+          labelText='Opis'
           name='description'
           value={educationFormState.description}
           onChange={(e) => onChangeHandler(e)}

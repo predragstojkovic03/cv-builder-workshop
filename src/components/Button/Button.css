@@ -15,9 +15,9 @@
 }
 
 .btn-primary {
-    background: #0070f3;
-    border: 1px solid #0070f3;
-    color: #fff;
+    background: var(--accent-color);
+    border: 1px solid var(--accent-darker);
+    color: var(--main-text-color);
 }
 
 .btn-transparent {
@@ -44,14 +44,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 0px 8px 15px #00428d41;
+    box-shadow: 0px 8px 15px #8d670041;
     transition: all 0.3s ease 0s;
   }
 
   .btn-resume-preview:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px #024ea554;
-    color: #fff;
+    color: var(--main-text-color);
     transform: translateY(-7px);
   }
 
@@ -60,8 +60,8 @@
   }
 
 .btn-primary:hover {
-    background: #0268dd;
-    border: 1px solid #0268dd;
+    background: var(--accent-darker);
+    border: 1px solid var(--accent-darker);
 }
 
 

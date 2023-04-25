@@ -54,7 +54,7 @@ const EmploymentHistory = ({
           type='button'
           onClick={(e) => addItem(e)}
         >
-          Add
+          Dodaj
         </button>
       </div>
     </div>

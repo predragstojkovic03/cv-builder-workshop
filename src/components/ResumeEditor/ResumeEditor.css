@@ -10,6 +10,14 @@
   justify-content: space-between;
 }
 
+.tutorial {
+  padding: 8px;
+  background: #fd6b022a;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-block: 16px;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1200px) {

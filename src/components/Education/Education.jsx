@@ -56,7 +56,7 @@ const Education = ({ education, setEducation, setModalState }) => {
           type='button'
           onClick={(e) => addItem(e)}
         >
-          Add
+          Dodaj
         </button>
       </div>
     </div>

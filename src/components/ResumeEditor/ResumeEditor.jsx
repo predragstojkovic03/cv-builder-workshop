@@ -38,7 +38,13 @@ const ResumeEditor = ({
         <Button styleClasses='btn btn-primary' onClick={() => navigate('/')}>
           Nazad na početnu
         </Button>
-      </div>{' '}
+      </div>
+      <div className='tutorial'>
+        CV se preuzima tako što se klikne na dokument.
+        <br />
+        Kada iskoči prozor odaberite format A4. <br />
+        <strong>Preporučuje se Chrome pretraživač.</strong>
+      </div>
       <form>
         <EditorSection heading='Lične informacije'>
           <PersonalDetails
